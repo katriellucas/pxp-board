@@ -29,7 +29,7 @@
 
 <style lang="stylus">
 .chart
-	background url(loading.svg)
+	background url(../loading.svg)
 	background-position center
 	background-repeat no-repeat
 	background-size 64px auto

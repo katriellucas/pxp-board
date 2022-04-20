@@ -65,7 +65,7 @@
 	padding 32px 0 16px
 
 .loader
-	background url(loading.svg)
+	background url(../loading.svg)
 	background-position center
 	background-repeat no-repeat
 	background-size 64px auto
