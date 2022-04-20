@@ -34,9 +34,9 @@
 			<section in:fade="{{delay: 100, duration: 250 }}" out:fade="{{ duration: 100 }}">>
 				<div style="display: grid; grid-template-columns: 1fr">
 					<Chart/>
-					<Banner quest="{quest}"/>
 				</div>
 				<Exchanges/>
+				<Banner quest="{quest}"/>
 			</section>
 		</Route>
 		<Route path="/savings">
@@ -53,7 +53,7 @@
 				<Crypto name="Tron" ticker="TRX" color="#3E73C4" value="3.0%"/>
 				<Crypto name="Tether Gold" ticker="XAUT" color="#26A17B" value="3.0%"/>
 				<Crypto name="Dai" ticker="DAI" color="#D59B05" value="6.0%"/>
-				<Crypto name="Binance Coin" ticker="BNB" color="#D59B05" value="6.0%"/>
+				<Crypto name="Binance Coin" ticker="BNB" color="#D59B05" value="5.0%"/>
 			</Savings>
 		</Route>
 		<Route path="/staking">

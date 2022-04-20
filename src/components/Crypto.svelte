@@ -7,7 +7,7 @@
 
 <li class="item" style="--color: {color}">
 	<div class="crypto">
-		<img class="logo" src="crypto_logos/{name}.svg"/>
+		<img class="logo" src="crypto_logos/{name}.svg" alt="{name} logo"/>
 		<div>
 			<div class="label">{name}</div>
 			<div class="ticker">{ticker}</div>

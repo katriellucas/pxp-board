@@ -9,6 +9,8 @@
     return await response.json()
 	})()
 
+	console.log(fetchImage)
+
 	function myFunc(node, value) {
 		node.textContent = `$${value.toFixed(5)}`;
 	}
@@ -18,6 +20,13 @@
 		WhiteBIT: "https://whitebit.com/referral/1bd865b8-13cb-4395-a9fa-70332777b455",
 		BitGlobal: "https://www.bitglobal.com/register;i=cwh4at",
 		Bittrex: "https://bittrex.com/discover/join?referralCode=MWC-FKX-2AP"
+	}
+
+	const graph = {
+		Bitrue: "https://bitrue.com/trade/pxp_usdt",
+		WhiteBIT: "https://whitebit.com/trade-pro/PXP-USDT?type=spot",
+		BitGlobal: "https://bitglobal.com/en-us/exchange/professional?q=PXP-USDT",
+		Bittrex: "https://global.bittrex.com/Market/Index?MarketName=USDT-PXP"
 	}
 </script>
 
@@ -35,17 +44,22 @@
 							<img class="image" src="{data.tickers[i].market.logo}" alt="{data.tickers[i].market.name}" />
 							<h3 class="name">{data.tickers[i].market.name}</h3>
 						</div>
-						<a href="{refer[data.tickers[i].market.name]}" class="button ripple" target="_blank" rel="sponsored">
-							<Icon icon="referral"/>
-						</a>
+						<div>
+							<a href="{graph[data.tickers[i].market.name]}" class="button ripple" target="_blank" rel="sponsored">
+								<Icon icon="chart"/>
+							</a>
+							<a href="{refer[data.tickers[i].market.name]}" class="button ripple" target="_blank" rel="sponsored">
+								<Icon icon="referral"/>
+							</a>
+						</div>
 					</div>
 					<div class="card__body">
 						<div class="price">
-							Price:
+							PXP price:
 							<span use:myFunc={data.tickers[i].last}></span>
 						</div>
 						<div class="fee">
-							Withdrawn fee:
+							Withdrawal fee:
 							<span class="fee"><ExFee exchange="{data.tickers[i].market.name}"/></span>
 						</div>
 					</div>
@@ -111,7 +125,7 @@
 	align-items center
 	color var(--on-surface)
 	border-radius 50%
-	display flex
+	display inline-flex
 	fill var(--on-surface)
 	height 40px
 	justify-content center

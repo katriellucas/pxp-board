@@ -8,12 +8,12 @@
 <footer>
 	<section class="grid">
 		<div class="disclamair">
-			<div class="title">Disclamair</div>
-			PXP Board is made by a investor for investors and does not imply endorsement by Point Pay LLC. All trademarks, logos and brand names are the property of their respective owners. If you like this APP, consider helping me out by using my affiliate links or making a donation, any value is appreciated. 💙
+			<div class="title">Disclaimer</div>
+			PXP Board is made by an investor for investors and does not imply endorsement by Point Pay LLC. All trademarks, logos and brand names are the property of their respective owners. If you like this APP, consider helping me out by using my affiliate links or making a donation, any value is appreciated. 💙
 		</div>
 		<div class="about-me">
 			<div class="title">About me</div>
-			Hi, my name is Katriel Lucas, I'm a remote front-end developer with 5+ years of experience. I work primarily with Svelte and REST APIs.
+			Hello, my name is Katriel Lucas, and I am a remote front-end developer with more than five years of experience. My main focus is on Svelte and REST API development.
 		</div>
 		<div class="reach-out">
 			<div class="title">Check me out</div>
@@ -25,7 +25,7 @@
 		</div>
 	</section>
 	<div class="social">
-		<div class="title">Point Pay Social</div>
+		<div class="title">PointPay Social</div>
 		<div class="icon-group">
 			<IconSocial url="https://pointpay.io" icon="website"/>
 			<IconSocial url="https://t.me/pointpay_eng" icon="telegram"/>
@@ -45,6 +45,7 @@
 <style lang="stylus">
 footer
 	background var(--surface-2)
+	margin-top 64px
 	padding 32px 16px
 	width 100%
 

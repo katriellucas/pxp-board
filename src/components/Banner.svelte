@@ -8,15 +8,19 @@
 			url: "https://coinmarketcap.com/currencies/pointpay"
 		},
 		{ 
-			name: "Follow PointPay on Twitter, like and comment the last tweets using $PXP.",
+			name: "At CoinGecko, click ⭐, vote 'Good' and search 'Pointpay' on the search bar.",
+			url: "https://coingecko.com/coins/pointpay"
+		},
+		{ 
+			name: "Follow PointPay on Twitter - Like and Comment on the latest tweets using $PXP.",
 			url: "https://twitter.com/PointPay1"
 		},
 		{ 
-			name: "Follow PointPay on Instagram, like, save and comment the last posts using #PointPay",
+			name: "Follow PointPay on Instagram - Like, Save and Comment on the latest posts using #PointPay",
 			url: "https://instagram.com/pointpayofficial"
 		},
 		{ 
-			name: "Subscribe to PointPay on YouTube, like and comment the last videos",
+			name: "Subscribe to PointPay on YouTube, Like and Comment the latest videos",
 			url: "https://youtube.com/c/PointPay_official"
 		},
 		{ 
@@ -24,7 +28,7 @@
 			url: "https://www.google.com/search?q=pointpay"
 		},
 		{ 
-			name: "Like and follow PointPay on Facebook",
+			name: "Like and follow PointPay on Facebook - Like and Comment on the latest posts",
 			url: "https://www.facebook.com/PointPayLtd"
 		},
 	];
@@ -33,7 +37,7 @@
 <div class="banner">
 	<div class="head">
 		<Icon big icon="quest"/>
-		<div class="title">On Point Quest</div>
+		<div class="title">PointPay Quest</div>
 	</div>
 	<div class="body">
 		{quest_book[quest].name}
