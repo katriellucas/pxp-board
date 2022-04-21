@@ -38,10 +38,11 @@
 	<div class="head">
 		<Icon big icon="quest"/>
 		<div class="title">PointPay Quest</div>
+		<div style="flex: 1"></div>
+		<a href="{quest_book[quest].url}" target="_blank" class="button">Let's go!</a>
 	</div>
 	<div class="body">
 		{quest_book[quest].name}
-		<a href="{quest_book[quest].url}" target="_blank" class="button">Let's go!</a>
 	</div>
 </div>
 
@@ -58,16 +59,17 @@
 	align-items center
 	display flex
 	margin-bottom 8px
+	flex 1
 
 .title
-	font 500 20px/24px 'Roboto', sans-serif
+	font 500 18px/22px 'Roboto', sans-serif
 	margin-left 8px
 
 .body
 	align-items center
 	border-top solid 1px rgba(#fff, .3)
 	display flex
-	font 500 16px/20px 'Roboto', sans-serif
+	font 400 16px/20px 'Roboto', sans-serif
 	justify-content space-between
 	padding-top 16px
 
@@ -80,8 +82,6 @@
 	fill currentcolor
 	height 40px
 	justify-content center
-	margin-left 16px
-	min-width 96px
 	padding 0 16px
 	font 500 14px/20px 'Roboto', sans-serif
 

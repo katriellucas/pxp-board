@@ -14,6 +14,15 @@
 	function myFunc(node, value) {
 		node.textContent = `$${value.toFixed(5)}`;
 	}
+
+	function exVolume(node, value) {
+		node.textContent = new Intl.NumberFormat('en-US', {
+			style: 'currency',
+			currency: 'USD',
+			minimumFractionDigits: 2,
+			maximumFractionDigits: 2,
+		}).format(value);
+	}
 	
 	const refer = {
 		Bitrue: "https://www.bitrue.com/act/partner/landing?cn=900000&inviteCode=ETQZEGL",
@@ -57,6 +66,10 @@
 						<div class="price">
 							PXP price:
 							<span use:myFunc={data.tickers[i].last}></span>
+						</div>
+						<div class="volume">
+							Volume:
+							<span use:exVolume={data.tickers[i].converted_volume.usd}></span>
 						</div>
 						<div class="fee">
 							Withdrawal fee:
@@ -117,7 +130,7 @@
 		margin-top 16px
 		padding-top 16px
 
-.price, .fee
+.price, .fee, .volume
 	display flex
 	justify-content space-between
 

@@ -16,7 +16,7 @@
 	import Banner from './components/Banner.svelte'
 	import TopAppBar from './components/TopAppBar.svelte'
 
-	let quest = Math.floor((Math.random() * 3));
+	let quest = Math.floor((Math.random() * 7));
 	let dialog = false
 
 	function handleMessage(event) {

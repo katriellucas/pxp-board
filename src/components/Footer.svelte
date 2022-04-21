@@ -7,9 +7,9 @@
 
 <footer>
 	<section class="grid">
-		<div class="disclamair">
+		<div class="disclaimer">
 			<div class="title">Disclaimer</div>
-			PXP Board is made by an investor for investors and does not imply endorsement by Point Pay LLC. All trademarks, logos and brand names are the property of their respective owners. If you like this APP, consider helping me out by using my affiliate links or making a donation, any value is appreciated. 💙
+			PXP Board is made by an investor for investors and does not imply endorsement by Point Pay LLC. All trademarks, logos and brand names are the property of their respective owners. If you like this Web App, consider helping me out by using the affiliate links or making a donation, any value is appreciated. 💙
 		</div>
 		<div class="about-me">
 			<div class="title">About me</div>
@@ -82,7 +82,7 @@ footer
 	font 500 16px/20px 'Roboto', sans-serif
 	margin-bottom 8px
 
-.disclamair
+.disclaimer
 	color var(--on-surface)
 	font 400 14px/20px 'Roboto', sans-serif
 	grid-area a
