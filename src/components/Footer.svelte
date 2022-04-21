@@ -9,7 +9,9 @@
 	<section class="grid">
 		<div class="disclaimer">
 			<div class="title">Disclaimer</div>
-			PXP Board is made by an investor for investors and does not imply endorsement by Point Pay LLC. All trademarks, logos and brand names are the property of their respective owners. If you like this Web App, consider helping me out by using the affiliate links or making a donation, any value is appreciated. 💙
+			PXP Board is created by an investor for investors and does not imply endorsement by Point Pay LLC. All trademarks, logos and brand names belong to their respective owners.
+			<br><br>
+			If you find this Web App useful, consider using the affiliate links or making a donation. Any amount would be greatly appreciated. 💙
 		</div>
 		<div class="about-me">
 			<div class="title">About me</div>

@@ -68,7 +68,7 @@
 							<span use:myFunc={data.tickers[i].last}></span>
 						</div>
 						<div class="volume">
-							Volume:
+							24H Volume:
 							<span use:exVolume={data.tickers[i].converted_volume.usd}></span>
 						</div>
 						<div class="fee">

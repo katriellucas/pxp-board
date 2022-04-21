@@ -22,7 +22,6 @@
 	function handleMessage(event) {
 		dialog = event.detail
 	}
-
 </script>
 
 <TopAppBar/>
