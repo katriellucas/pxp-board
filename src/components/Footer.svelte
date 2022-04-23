@@ -25,22 +25,30 @@
 				<LinkButton icon="email" url="mailto:katriel.developer@gmail.com" label="Email"/>
 			</div>
 		</div>
-	</section>
-	<div class="social">
-		<div class="title">PointPay Social</div>
-		<div class="icon-group">
-			<IconSocial url="https://pointpay.io" icon="website"/>
-			<IconSocial url="https://t.me/pointpay_eng" icon="telegram"/>
-			<IconSocial url="https://github.com" icon="linkedin"/>
-			<IconSocial url="https://twitter.com/PointPay1" icon="twitter"/>
-			<IconSocial url="https://facebook.com/PointPayLtd" icon="facebook"/>
-			<IconSocial url="https://pointpay.medium.com/" icon="medium"/>
-			<IconSocial url="https://reddit.com/user/PointPay_official" icon="reddit"/>
-			<IconSocial url="https://youtube.com/c/PointPay_official" icon="youtube"/>
-			<IconSocial url="https://instagram.com/pointpayofficial" icon="instagram"/>
-			<IconSocial url="https://discord.com/invite/pointpay" icon="discord"/>
+		<div class="social">
+			<div class="title">PointPay Social</div>
+			<div class="icon-group">
+				<IconSocial url="https://pointpay.io" icon="website"/>
+				<IconSocial url="https://t.me/pointpay_eng" icon="telegram"/>
+				<IconSocial url="https://github.com" icon="linkedin"/>
+				<IconSocial url="https://twitter.com/PointPay1" icon="twitter"/>
+				<IconSocial url="https://facebook.com/PointPayLtd" icon="facebook"/>
+				<IconSocial url="https://pointpay.medium.com/" icon="medium"/>
+				<IconSocial url="https://reddit.com/user/PointPay_official" icon="reddit"/>
+				<IconSocial url="https://youtube.com/c/PointPay_official" icon="youtube"/>
+				<IconSocial url="https://instagram.com/pointpayofficial" icon="instagram"/>
+				<IconSocial url="https://discord.com/invite/pointpay" icon="discord"/>
+				<IconSocial url="https://coinmarketcap.com/currencies/pointpay/" icon="coinmarketcap"/>
+				<IconSocial url="https://coingecko.com/en/coins/pointpay" icon="coingecko"/>
+			</div>
 		</div>
-	<div>
+		<!-- <div class="donors">
+			<div class="title">Donors</div>
+			<div class="panel">
+				The Don
+			</div>
+		<div> -->
+	</section>
 	<div class="copyright">©{year} Katriel Lucas. All Rights Reserved. Data from <a class="blue" href="https://www.coingecko.com/en/coins/pointpay">CoinGecko</a> and <a class="blue" href="https://coinstats.app/coins/pointpay/">CoinStats</a>.</div>
 </footer>
 
@@ -68,16 +76,21 @@ footer
 	grid-template-areas:
 		"a a a a" \
 		"b b b b" \
-		"c c c c" 
+		"c c c c" \
+		"d d d d" \
+		"e e e e" 
 		
 	@media (min-width 600px)
 		grid-template-areas:
 			"a a a a" \
-			"b b c c" 
+			"b b c c" \
+			"d d d d" \
+			"e e e e" 
 
 	@media (min-width 1080px)
 		grid-template-areas:
-			"a a b c"
+			"a a b c" \
+			"d d e e"
 
 .title
 	color var(--on-surface)
@@ -100,7 +113,17 @@ footer
 	grid-area c
 
 .social
-	margin-top 24px
+	grid-area d
+
+.donors
+	color var(--on-surface)	
+	font 500 14px/20px Roboto,sans-serif
+	grid-area e
+
+.panel
+	background var(--surface-3)
+	border-radius 16px
+	padding 16px
 
 .icon-group
 	display flex

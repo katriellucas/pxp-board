@@ -9,8 +9,6 @@
     return await response.json()
 	})()
 
-	console.log(fetchImage)
-
 	function myFunc(node, value) {
 		node.textContent = `$${value.toFixed(5)}`;
 	}

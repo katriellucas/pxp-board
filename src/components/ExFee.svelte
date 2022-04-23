@@ -50,12 +50,9 @@
 			break;
 		}
 		default: {
-			console.log("No errand");
 			break;
 		}
 	}
-
-console.log(test)
 
 </script>
 
