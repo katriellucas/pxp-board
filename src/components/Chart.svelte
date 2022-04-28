@@ -2,7 +2,7 @@
 	<script async src="js/chart.js"></script>
 </svelte:head>
 
-<div class="chart">
+<div class="wrapper">
 	<coin-stats-chart-widget
 		type="medium"
 		coin-id="pointpay"
@@ -21,13 +21,17 @@
 		candle-grids-color="var(--surface-3)"
 		border-color="var(--surface-3)"
 		font="Roboto, Arial, Helvetica"
-		style="width: 100%;">
+		class="chart">
 	</coin-stats-chart-widget>
 </div>
 
 
 
 <style lang="stylus">
+.wrapper
+	display grid
+	grid-template-columns 1fr
+
 .chart
 	background url(../loading.svg)
 	background-position center

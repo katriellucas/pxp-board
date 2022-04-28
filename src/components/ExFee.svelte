@@ -16,7 +16,7 @@
 				let coins = api.coins
 				for (let coin of coins) {
 					if (coin.coin === 'pxp') {
-						const fee = parseFloat(coin.chainDetail[0].withdrawFee).toFixed(2)
+						const fee = `${parseFloat(coin.chainDetail[0].withdrawFee).toFixed(2)} PXP`
 						return fee
 					}
 				}
@@ -28,7 +28,7 @@
 				const coins = api.data.coinConfig
 				for (let coin of coins) {
 					if (coin.name === 'PXP') {
-						const fee = parseFloat(coin.withdrawFee).toFixed(2)
+						const fee = `${parseFloat(coin.withdrawFee).toFixed(2)} PXP`
 						return fee
 					}
 				}
@@ -37,14 +37,24 @@
 		}
 		case "Bittrex": {
 			test = wtx('https://fees.pxp.workers.dev/?api=https://api.bittrex.com/v3/currencies/pxp').then(api => {
-				const fee = parseFloat(api.txFee).toFixed(2)
+				const fee = `${parseFloat(api.txFee).toFixed(2)} PXP`
 				return fee
 			})
 			break;
 		}
 		case "WhiteBIT": {
 			test = wtx('https://fees.pxp.workers.dev/?api=https://whitebit.com/api/v4/public/fee').then(api => {
-				const fee = parseFloat(api.PXP.withdraw.fixed).toFixed(2)
+				const fee = `${parseFloat(api.PXP.withdraw.fixed).toFixed(2)} PXP`
+				return fee
+			})
+			break;
+		}
+		case "Uniswap (v3)": {
+			test = wtx('https://api.gasprice.io/v1/estimates?countervalue=usd').then(api => {
+				let ethereum = parseFloat(api.result.ethPrice)
+				let min_fee = ((parseFloat(api.result.eco.feeCap) * 129830) * 0.000000001 * ethereum).toFixed(2)
+				let max_fee = ((parseFloat(api.result.instant.feeCap) * 129830) * 0.000000001 * ethereum).toFixed(2)
+				const fee = `$${min_fee} ~ $${max_fee}`
 				return fee
 			})
 			break;
@@ -59,7 +69,7 @@
 {#await test}
 	<Spinner/>
 {:then fee}
-	{fee} PXP
+	{fee}
 {:catch error}
-	<p style="color: red">{error}</p>
+	<p style="color: var(--red)">{error}</p>
 {/await}

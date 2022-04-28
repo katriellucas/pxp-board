@@ -1,6 +1,7 @@
 <script>
 	import IconSocial from './IconSocial.svelte'
 	import LinkButton from './LinkButton.svelte'
+	import Donor from './Donor.svelte'
 
 	let year = new Date().getFullYear()
 </script>
@@ -15,7 +16,7 @@
 		</div>
 		<div class="about-me">
 			<div class="title">About me</div>
-			Hello, my name is Katriel Lucas, and I am a remote front-end developer with more than five years of experience. My main focus is on Svelte and REST API development.
+			My name is Katriel Lucas, and I am a remote front-end developer with more than five years of experience. My main focus is on Svelte and REST API development.
 		</div>
 		<div class="reach-out">
 			<div class="title">Check me out</div>
@@ -42,20 +43,20 @@
 				<IconSocial url="https://coingecko.com/en/coins/pointpay" icon="coingecko"/>
 			</div>
 		</div>
-		<!-- <div class="donors">
+		<div class="donors">
 			<div class="title">Donors</div>
-			<div class="panel">
-				The Don
-			</div>
-		<div> -->
+			<Donor label="The Don" url=""/>
+			<Donor label="Artemis" url=""/>
+		<div>
 	</section>
-	<div class="copyright">©{year} Katriel Lucas. All Rights Reserved. Data from <a class="blue" href="https://www.coingecko.com/en/coins/pointpay">CoinGecko</a> and <a class="blue" href="https://coinstats.app/coins/pointpay/">CoinStats</a>.</div>
+	<div class="copyright">
+		©{year} Katriel Lucas. All Rights Reserved. Data from <a class="blue" href="https://www.coingecko.com/en/coins/pointpay">CoinGecko</a> and <a class="blue" href="https://coinstats.app/coins/pointpay/">CoinStats</a>
+	</div>
 </footer>
 
 <style lang="stylus">
 footer
 	background var(--surface-2)
-	margin-top 64px
 	padding 32px 16px
 	width 100%
 
@@ -116,14 +117,7 @@ footer
 	grid-area d
 
 .donors
-	color var(--on-surface)	
-	font 500 14px/20px Roboto,sans-serif
 	grid-area e
-
-.panel
-	background var(--surface-3)
-	border-radius 16px
-	padding 16px
 
 .icon-group
 	display flex
@@ -132,7 +126,7 @@ footer
 .copyright
 	color var(--on-surface-alt)
 	font 400 14px/20px 'Roboto', sans-serif
-	margin-top 24px
+	margin-top 32px
 	text-align center
 
 .blue

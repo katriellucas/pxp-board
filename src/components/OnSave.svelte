@@ -23,8 +23,8 @@ tr
 td
 	color var(--green)
 	font 400 14px/20px 'Roboto', sans-serif
-	min-width 64px
-	padding 0 24px
+	padding 0 16px
+	padding-bottom 16px
 	text-align right
 	white-space nowrap
 

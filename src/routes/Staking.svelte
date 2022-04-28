@@ -1,4 +1,5 @@
 <script>
+	import { onDestroy } from 'svelte';
 	import { fade } from 'svelte/transition';
 </script>
 
@@ -22,7 +23,6 @@
 .savings
 	display flex
 	justify-content center
-	margin-top 16px
 	overflow auto
 
 .card

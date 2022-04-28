@@ -1,27 +1,25 @@
 <script>
-	import {Route} from 'tinro';
 	import { fade } from 'svelte/transition';
+	import {Route} from 'tinro';
+
 	import Savings from './routes/Savings.svelte'
 	import Staking from './routes/Staking.svelte'
+	// import Donate from './routes/Donate.svelte'
 
+	import Banner from './components/Banner.svelte'
 	import Chart from './components/Chart.svelte'
 	import Crypto from './components/Crypto.svelte'
-	import DonorDialog from './components/DonorDialog.svelte'
 	import Exchanges from './components/Exchanges.svelte'
 	import Fab from './components/Fab.svelte'
 	import Footer from './components/Footer.svelte'
 	import OnStake from './components/OnStake.svelte'
 	import NavigationBar from './components/NavigationBar.svelte'
 	import NavigationRail from './components/NavigationRail.svelte'
-	import Banner from './components/Banner.svelte'
+	import SupplyInfo from './components/SupplyInfo.svelte'
 	import TopAppBar from './components/TopAppBar.svelte'
 
 	let quest = Math.floor((Math.random() * 7));
-	let dialog = false
 
-	function handleMessage(event) {
-		dialog = event.detail
-	}
 </script>
 
 <TopAppBar/>
@@ -30,10 +28,9 @@
 <main>
 	<div class="live-area">
 		<Route path="/">
-			<section in:fade="{{delay: 100, duration: 250 }}" out:fade="{{ duration: 100 }}">>
-				<div style="display: grid; grid-template-columns: 1fr">
-					<Chart/>
-				</div>
+			<section in:fade="{{delay: 100, duration: 250 }}" out:fade="{{ duration: 100 }}">
+				<Chart/>
+				<SupplyInfo/>
 				<Exchanges/>
 				<Banner quest="{quest}"/>
 			</section>
@@ -67,20 +64,21 @@
 				<OnStake quantity="1,000,001+ PXP" on_stake03="10.0%" on_stake06="15.0%" on_stake12="20.0%"/>
 			</Staking>
 		</Route> 
+		<!-- <Route path="/donate">
+			<Donate></Donate>
+		</Route>  -->
 	</div>
 </main>
 
-<!-- <Fab on:message={handleMessage}/> -->
+<Fab/>
 <Footer/>
 <NavigationBar/>
-{#if dialog }
-	<DonorDialog on:message={handleMessage}/>
-{/if}
 
 
 <style lang="stylus">
 main
 	min-height 100%
+	margin-bottom 64px
 
 .live-area
 	display grid

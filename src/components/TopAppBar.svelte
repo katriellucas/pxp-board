@@ -4,7 +4,7 @@
 
 <header class="top-app-bar">
 	<h1 class="title">PXP Board</h1>
-	<SignupButton url="https://auth.pointpay.io/sign-up?ref=15542698942" label="PointPay bank"/>
+	<SignupButton url="https://auth.pointpay.io/sign-up?ref=15542698942" label="PointPay Bank"/>
 </header>
 
 <style lang="stylus">

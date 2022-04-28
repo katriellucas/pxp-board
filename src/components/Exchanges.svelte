@@ -26,14 +26,16 @@
 		Bitrue: "https://www.bitrue.com/act/partner/landing?cn=900000&inviteCode=ETQZEGL",
 		WhiteBIT: "https://whitebit.com/referral/1bd865b8-13cb-4395-a9fa-70332777b455",
 		BitGlobal: "https://www.bitglobal.com/register;i=cwh4at",
-		Bittrex: "https://bittrex.com/discover/join?referralCode=MWC-FKX-2AP"
+		Bittrex: "https://bittrex.com/discover/join?referralCode=MWC-FKX-2AP",
+		"Uniswap (v3)": "https://app.uniswap.org/"
 	}
 
 	const graph = {
 		Bitrue: "https://bitrue.com/trade/pxp_usdt",
 		WhiteBIT: "https://whitebit.com/trade-pro/PXP-USDT?type=spot",
 		BitGlobal: "https://bitglobal.com/en-us/exchange/professional?q=PXP-USDT",
-		Bittrex: "https://global.bittrex.com/Market/Index?MarketName=USDT-PXP"
+		Bittrex: "https://global.bittrex.com/Market/Index?MarketName=USDT-PXP",
+		"Uniswap (v3)": "https://info.uniswap.org/#/tokens/0x95aa5d2dbd3c16ee3fdea82d5c6ec3e38ce3314f"
 	}
 </script>
 
@@ -44,38 +46,36 @@
 {:then data}
 	<div class="card-grid">
 		{#each data.tickers as _, i}
-			{#if data.tickers[i].market.name != 'Uniswap (v3)'}
-				<div class="card" transition:fade>
-					<div class="card__head">
-						<div class="exchange">
-							<img class="image" src="{data.tickers[i].market.logo}" alt="{data.tickers[i].market.name}" />
-							<h3 class="name">{data.tickers[i].market.name}</h3>
-						</div>
-						<div>
-							<a href="{graph[data.tickers[i].market.name]}" class="button ripple" target="_blank" rel="sponsored">
-								<Icon icon="chart"/>
-							</a>
-							<a href="{refer[data.tickers[i].market.name]}" class="button ripple" target="_blank" rel="sponsored">
-								<Icon icon="referral"/>
-							</a>
-						</div>
+			<div class="card" transition:fade>
+				<div class="card__head">
+					<div class="exchange">
+						<img class="image" src="{data.tickers[i].market.logo}" alt="{data.tickers[i].market.name}" />
+						<h3 class="name">{data.tickers[i].market.name}</h3>
 					</div>
-					<div class="card__body">
-						<div class="price">
-							PXP price:
-							<span use:myFunc={data.tickers[i].last}></span>
-						</div>
-						<div class="volume">
-							24H Volume:
-							<span use:exVolume={data.tickers[i].converted_volume.usd}></span>
-						</div>
-						<div class="fee">
-							Withdrawal fee:
-							<span class="fee"><ExFee exchange="{data.tickers[i].market.name}"/></span>
-						</div>
+					<div>
+						<a href="{graph[data.tickers[i].market.name]}" class="button ripple" target="_blank" rel="sponsored">
+							<Icon icon="chart"/>
+						</a>
+						<a href="{refer[data.tickers[i].market.name]}" class="button ripple" target="_blank" rel="sponsored">
+							<Icon icon="referral"/>
+						</a>
 					</div>
 				</div>
-			{/if}
+				<div class="card__body">
+					<div class="price">
+						PXP price:
+						<span use:myFunc={data.tickers[i].converted_last.usd}></span>
+					</div>
+					<div class="volume">
+						24H Volume:
+						<span use:exVolume={data.tickers[i].converted_volume.usd}></span>
+					</div>
+					<div class="fee">
+						Withdrawal fee:
+						<span class="fee"><ExFee exchange="{data.tickers[i].market.name}"/></span>
+					</div>
+				</div>
+			</div>
 		{/each}
 	</div>
 {:catch error}

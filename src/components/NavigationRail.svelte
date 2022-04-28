@@ -22,6 +22,12 @@
 		</span>
 		<span class="label">Staking</span>
 	</a>
+	<!-- <a class="route route-ripple" href="/donate" use:active exact>
+		<span class="indicator">
+			<Icon icon="donate"/>
+		</span>
+		<span class="label">Donate</span>
+	</a> -->
 </div>
 
 <style lang="stylus">
@@ -36,9 +42,25 @@
 	width 80px
 	position fixed
 	top 0
+	user-select none
+	-webkit-tap-highlight-color transparent
 
 	@media(min-width 840px)
 		display flex
+
+	&:focus
+		outline none !important
+
+	&::before
+		content ''
+		position absolute
+		top 0
+		background url(../logo.svg)
+		background-position center
+		background-repeat no-repeat
+		background-size 40px auto
+		height 80px
+		width 80px
 
 .route
 	align-items center
@@ -64,10 +86,8 @@
 :global(.active)
 	.indicator
 		background rgba(#0C7EF9, .07)
-		fill #0C7EF9
+		fill var(--primary)
 		width 56px
 	.label
-		color #0C7EF9
-
-
+		color var(--primary)
 </style>
