@@ -51,7 +51,7 @@
 
 </script>
 
-<h2 class="title">Supply info</h2>
+<h2 class="title">Token Supply</h2>
 
 <div class="card-grid">
 	<div class="card">

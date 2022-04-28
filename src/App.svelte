@@ -15,7 +15,7 @@
 	import OnStake from './components/OnStake.svelte'
 	import NavigationBar from './components/NavigationBar.svelte'
 	import NavigationRail from './components/NavigationRail.svelte'
-	import SupplyInfo from './components/SupplyInfo.svelte'
+	import TokenSupply from './components/TokenSupply.svelte'
 	import TopAppBar from './components/TopAppBar.svelte'
 
 	let quest = Math.floor((Math.random() * 7));
@@ -30,7 +30,7 @@
 		<Route path="/">
 			<section in:fade="{{delay: 100, duration: 250 }}" out:fade="{{ duration: 100 }}">
 				<Chart/>
-				<SupplyInfo/>
+				<TokenSupply/>
 				<Exchanges/>
 				<Banner quest="{quest}"/>
 			</section>
