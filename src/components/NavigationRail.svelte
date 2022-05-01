@@ -22,18 +22,19 @@
 		</span>
 		<span class="label">Staking</span>
 	</a>
-	<!-- <a class="route route-ripple" href="/donate" use:active exact>
+	<a class="route route-ripple" href="/donate" use:active exact>
 		<span class="indicator">
 			<Icon icon="donate"/>
 		</span>
 		<span class="label">Donate</span>
-	</a> -->
+	</a>
 </div>
 
 <style lang="stylus">
 .navigation-rail
 	align-items center
 	background var(--surface-1)
+	border-right solid 1px var(--surface-3)
 	display none
 	flex-direction column
 	height 100%
@@ -66,6 +67,8 @@
 	align-items center
 	display flex
 	flex-direction column
+	height 64px
+	justify-content center
 	width 80px
 
 .indicator
@@ -81,7 +84,7 @@
 .label
 	color var(--on-surface-alt)
 	font 500 12px/16px 'Roboto', sans-serif
-	margin 4px 0 12px
+	margin-top 4px
 
 :global(.active)
 	.indicator

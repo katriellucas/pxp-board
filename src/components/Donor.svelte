@@ -1,9 +1,8 @@
 <script>
-	export let url;
 	export let label;
 </script>
 
-<span class="chip ripple" href="{url}">{label}</span>
+<span class="chip ripple">{label}</span>
 
 <style lang="stylus">
 .chip

@@ -32,7 +32,7 @@
 
 .fab
 	align-items center
-	background var(--surface-3)
+	background var(--surface-2)
 	border-radius 56px
 	color var(--on-surface)
 	cursor pointer

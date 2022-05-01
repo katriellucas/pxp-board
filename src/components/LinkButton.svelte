@@ -14,7 +14,7 @@
 <style lang="stylus">
 .button
 	align-items center
-	background var(--surface-3)
+	background var(--surface-2)
 	color var(--on-surface)
 	border-radius 20px
 	display inline-flex

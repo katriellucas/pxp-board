@@ -22,12 +22,19 @@
 		</span>
 		<span class="label">Staking</span>
 	</a>
+	<a class="route route-ripple" href="/donate" use:active exact>
+		<span class="indicator">
+			<Icon icon="donate"/>
+		</span>
+		<span class="label">Donate</span>
+	</a>
 </div>
 
 <style lang="stylus">
 .navigation-bar
 	align-items center
 	background var(--surface-1)
+	border-top solid 1px var(--surface-3)
 	display flex
 	height 80px
 	justify-content center
@@ -44,7 +51,9 @@
 	flex-direction column
 	height 80px
 	justify-content center
-	min-width 120px 
+	max-width 120px 
+	min-width 60px 
+	width 100%
 
 .indicator
 	align-items center

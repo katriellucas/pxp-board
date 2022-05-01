@@ -17,7 +17,7 @@
 		chart-color="#0C7EF9"
 		chart-gradient-from="#0c7ef94d"
 		chart-gradient-to="#00000000"
-		chart-label-background="#000000"
+		chart-label-background="var(--surface-3)"
 		candle-grids-color="var(--surface-3)"
 		border-color="var(--surface-3)"
 		font="Roboto, Arial, Helvetica"

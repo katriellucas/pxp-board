@@ -14,10 +14,7 @@
 	height 64px
 	justify-content space-between
 	margin 16px 0
-	padding 0 8px
-	
-	@media (min-width: 360px)
-		padding 0 16px
+	padding 0 16px
 
 	@media (min-width: 600px)
 		padding 0 32px

@@ -38,20 +38,16 @@ button
 	@media(min-width 840px)
 		padding-left 80px
 
-:root
-	--scrollbarBG #CFD8DC
-	--thumbBG #90A4AE
-
 ::-webkit-scrollbar
 	width 8px
 	height 8px
 
 body
 	scrollbar-width thin
-	scrollbar-color var(--thumbBG) transparent
+	scrollbar-color transparent
 
 ::-webkit-scrollbar-track
-	background transparent
+	background var(--surface-1)
 
 ::-webkit-scrollbar-thumb
 	background-color var(--surface-3)

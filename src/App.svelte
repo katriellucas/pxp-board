@@ -1,20 +1,21 @@
 <script>
-	import { fade } from 'svelte/transition';
+	import {fade} from 'svelte/transition';
 	import {Route} from 'tinro';
 
 	import Savings from './routes/Savings.svelte'
 	import Staking from './routes/Staking.svelte'
-	// import Donate from './routes/Donate.svelte'
+	import Donate from './routes/Donate.svelte'
 
 	import Banner from './components/Banner.svelte'
 	import Chart from './components/Chart.svelte'
 	import Crypto from './components/Crypto.svelte'
+	import DonateWith from './components/DonateWith.svelte'
 	import Exchanges from './components/Exchanges.svelte'
 	import Fab from './components/Fab.svelte'
 	import Footer from './components/Footer.svelte'
-	import OnStake from './components/OnStake.svelte'
 	import NavigationBar from './components/NavigationBar.svelte'
 	import NavigationRail from './components/NavigationRail.svelte'
+	import OnStake from './components/OnStake.svelte'
 	import TokenSupply from './components/TokenSupply.svelte'
 	import TopAppBar from './components/TopAppBar.svelte'
 
@@ -64,9 +65,14 @@
 				<OnStake quantity="1,000,001+ PXP" on_stake03="10.0%" on_stake06="15.0%" on_stake12="20.0%"/>
 			</Staking>
 		</Route> 
-		<!-- <Route path="/donate">
-			<Donate></Donate>
-		</Route>  -->
+		<Route path="/donate">
+			<Donate>
+				<DonateWith name="Pix" --color="#32BCAD"/>
+				<DonateWith/>
+				<DonateWith name="Binance Smart Chain" --color="red"/>
+				<DonateWith/>
+			</Donate>
+		</Route> 
 	</div>
 </main>
 
@@ -79,19 +85,7 @@
 main
 	min-height 100%
 	margin-bottom 64px
-
-.live-area
-	display grid
-	grid-template-rows 1fr
-	grid-template-columns 1fr
-	padding 0 8px
-
-	& > :global(*)
-		grid-row 1
-		grid-column 1
-	
-	@media (min-width 360px)
-		padding 0 16px
+	padding 0 16px
 
 	@media (min-width 600px)
 		padding 0 32px
@@ -101,4 +95,13 @@ main
 
 	@media (min-width 1080px)
 		padding 0 96px
+
+.live-area
+	display grid
+	grid-template-rows 1fr
+	grid-template-columns 1fr
+
+	& > :global(*)
+		grid-row 1
+		grid-column 1
 </style>

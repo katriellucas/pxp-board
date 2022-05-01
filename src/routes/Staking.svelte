@@ -3,7 +3,7 @@
 	import { fade } from 'svelte/transition';
 </script>
 
-<section class="savings" in:fade="{{delay: 100, duration: 250 }}" out:fade="{{ duration: 100 }}">
+<section class="staking" in:fade="{{delay: 100, duration: 250 }}" out:fade="{{ duration: 100 }}">
 	<div class="card">
 		<div class="title">Staking</div>
 		<table>
@@ -20,7 +20,7 @@
 
 <style lang="stylus">
 
-.savings
+.staking
 	display flex
 	justify-content center
 	overflow auto

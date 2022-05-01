@@ -45,8 +45,8 @@
 		</div>
 		<div class="donors">
 			<div class="title">Donors</div>
-			<Donor label="The Don" url=""/>
-			<Donor label="Artemis" url=""/>
+			<Donor label="The Don"/>
+			<Donor label="Artemis"/>
 		<div>
 	</section>
 	<div class="copyright">
@@ -56,7 +56,7 @@
 
 <style lang="stylus">
 footer
-	background var(--surface-2)
+	background var(--surface-1)
 	padding 32px 16px
 	width 100%
 

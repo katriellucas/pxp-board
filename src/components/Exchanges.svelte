@@ -27,7 +27,7 @@
 		WhiteBIT: "https://whitebit.com/referral/1bd865b8-13cb-4395-a9fa-70332777b455",
 		BitGlobal: "https://www.bitglobal.com/register;i=cwh4at",
 		Bittrex: "https://bittrex.com/discover/join?referralCode=MWC-FKX-2AP",
-		"Uniswap (v3)": "https://app.uniswap.org/"
+		"Uniswap (v3)": "https://app.uniswap.org/#/swap?inputCurrency=ETH&outputCurrency=0x95aa5d2dbd3c16ee3fdea82d5c6ec3e38ce3314f&chain=mainnet"
 	}
 
 	const graph = {
