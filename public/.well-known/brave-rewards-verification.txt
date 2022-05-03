@@ -1,0 +1,4 @@
+This is a Brave Rewards publisher verification file.
+
+Domain: pxp-board.web.app
+Token: a11845ebcf026ff67dc9c3044c21fb22252333dc07aae7aa04e54314319d8d16

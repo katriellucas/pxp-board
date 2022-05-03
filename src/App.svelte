@@ -104,6 +104,7 @@
 				<DonateWith name="Pix" image="pix.svg" color="#32BCAD"/>
 				<DonateWith name="PointPay Me" color="#F3BA2F"/>
 				<DonateWith name="Binance Pay" color="#F3BA2F"/>
+				<DonateWith name="Binance Pay" color="#F3BA2F"/>
 			</Donate>
 		</Route> 
 	</div>

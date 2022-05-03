@@ -63,7 +63,7 @@
 				</div>
 				<div class="card__body">
 					<div class="price">
-						PXP price:
+						PXP Price:
 						<span use:myFunc={data.tickers[i].converted_last.usd}></span>
 					</div>
 					<div class="volume">
@@ -71,7 +71,7 @@
 						<span use:exVolume={data.tickers[i].converted_volume.usd}></span>
 					</div>
 					<div class="fee">
-						Withdrawal fee:
+						Withdrawal Fee:
 						<span class="fee"><ExFee exchange="{data.tickers[i].market.name}"/></span>
 					</div>
 				</div>
