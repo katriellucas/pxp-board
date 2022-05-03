@@ -34,7 +34,6 @@
 <style lang="stylus">
 .savings
 	display flex
-	flex 1
 	justify-content center
 
 .interest

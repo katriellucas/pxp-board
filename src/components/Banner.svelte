@@ -31,6 +31,10 @@
 			name: "Like and follow PointPay on Facebook - Like and Comment on the latest posts",
 			url: "https://www.facebook.com/PointPayLtd"
 		},
+		{ 
+			name: "Follow PointPay on Reddit - Upvote the latest posts",
+			url: "https://www.reddit.com/user/PointPay_official"
+		},
 	];
 </script>
 

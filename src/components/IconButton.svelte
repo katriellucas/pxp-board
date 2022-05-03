@@ -13,7 +13,7 @@
 	align-items center
 	color var(--on-surface-alt)
 	border-radius 50%
-	display flex
+	display inline-flex
 	fill var(--on-surface-alt)
 	height 40px
 	justify-content center

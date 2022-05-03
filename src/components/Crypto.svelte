@@ -45,6 +45,6 @@
 	font 400 14px/20px 'Roboto', sans-serif
 
 .value
-	color var(--green)
+	color var(--positive)
 	font 500 16px/20px 'Roboto', sans-serif
 </style>

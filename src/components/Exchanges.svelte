@@ -52,12 +52,12 @@
 						<img class="image" src="{data.tickers[i].market.logo}" alt="{data.tickers[i].market.name}" />
 						<h3 class="name">{data.tickers[i].market.name}</h3>
 					</div>
-					<div>
-						<a href="{graph[data.tickers[i].market.name]}" class="button ripple" target="_blank" rel="sponsored">
+					<div class="button-group">
+						<a href="{graph[data.tickers[i].market.name]}" class="icon-button ripple" target="_blank" rel="sponsored">
 							<Icon icon="chart"/>
 						</a>
 						<a href="{refer[data.tickers[i].market.name]}" class="button ripple" target="_blank" rel="sponsored">
-							<Icon icon="referral"/>
+							Sign up
 						</a>
 					</div>
 				</div>
@@ -132,7 +132,11 @@
 	display flex
 	justify-content space-between
 
-.button
+.button-group
+	align-items center
+	display flex
+
+.icon-button
 	align-items center
 	color var(--on-surface)
 	border-radius 50%
@@ -140,7 +144,20 @@
 	fill var(--on-surface)
 	height 40px
 	justify-content center
+	margin-right 4px
 	width 40px
+
+.button
+	align-items center
+	background var(--surface-3)
+	border-radius 20px
+	color var(--on-surface)
+	display inline-flex
+	fill var(--on-surface)
+	font 500 14px/18px 'Roboto', sans-serif
+	height 40px
+	justify-content center
+	padding 0 12px
 
 .image
 	width 40px

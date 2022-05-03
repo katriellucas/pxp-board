@@ -20,7 +20,7 @@ tr
 		border-bottom none
 
 td
-	color var(--green)
+	color var(--positive)
 	font 400 14px/20px 'Roboto', sans-serif
 	height 56px
 	min-width 64px

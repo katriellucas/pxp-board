@@ -1,10 +1,20 @@
 <script>
+
 	import SignupButton from './SignupButton.svelte'
+	import ThemeButton from './ThemeButton.svelte'
+
+	export let mode;
+
+	console.log(mode, "on top app bar")
+
 </script>
 
 <header class="top-app-bar">
 	<h1 class="title">PXP Board</h1>
-	<SignupButton url="https://auth.pointpay.io/sign-up?ref=15542698942" label="PointPay Bank"/>
+	<div class="actions">
+		<SignupButton url="https://auth.pointpay.io/sign-up?ref=15542698942" label="PointPay Bank"/>
+		<ThemeButton mode="{mode}" on:message/>
+	</div>
 </header>
 
 <style lang="stylus">
@@ -13,7 +23,7 @@
 	display flex
 	height 64px
 	justify-content space-between
-	margin 16px 0
+	margin 16px 0 40px
 	padding 0 16px
 
 	@media (min-width: 600px)
@@ -28,4 +38,8 @@
 .title
 	color var(--on-surface)
 	font 500 32px/36px 'Roboto', sans-serif
+
+.actions
+	align-items center
+	display flex
 </style>

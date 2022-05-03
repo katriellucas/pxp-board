@@ -1,4 +1,5 @@
 <script>
+	import { onMount } from 'svelte';
 	import {fade} from 'svelte/transition';
 	import {Route} from 'tinro';
 
@@ -19,11 +20,44 @@
 	import TokenSupply from './components/TokenSupply.svelte'
 	import TopAppBar from './components/TopAppBar.svelte'
 
-	let quest = Math.floor((Math.random() * 7));
+	let theme = localStorage.theme;
+	let quest = Math.floor((Math.random() * 8));
 
+	function changeTheme() {
+		document.body.className = ''
+		document.body.classList.add(`theme-${theme}`)
+	}
+
+	function changeIcon(event) {
+		theme = event.detail
+		changeTheme()
+		localStorage.setItem('theme', theme);
+	}
+
+	window.matchMedia('(prefers-color-scheme: dark)')
+		.addEventListener('change', event => {
+    	theme = event.matches ? "dark" : "light";
+			changeTheme()
+		});
+
+	onMount(() => {
+		if (theme) {
+			theme = localStorage.theme
+			console.log(theme,"ssssssss")
+		} else {
+			theme = (() => {
+				if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+					return "dark"
+				} else {
+					return "light"
+				}
+			})()
+		}
+		changeTheme()
+	});
 </script>
 
-<TopAppBar/>
+<TopAppBar mode="{theme}" on:message={changeIcon}/>
 <NavigationRail/>
 
 <main>
@@ -67,10 +101,9 @@
 		</Route> 
 		<Route path="/donate">
 			<Donate>
-				<DonateWith name="Pix" --color="#32BCAD"/>
-				<DonateWith/>
-				<DonateWith name="Binance Smart Chain" --color="red"/>
-				<DonateWith/>
+				<DonateWith name="Pix" image="pix.svg" color="#32BCAD"/>
+				<DonateWith name="PointPay Me" color="#F3BA2F"/>
+				<DonateWith name="Binance Pay" color="#F3BA2F"/>
 			</Donate>
 		</Route> 
 	</div>
@@ -83,9 +116,9 @@
 
 <style lang="stylus">
 main
-	min-height 100%
-	margin-bottom 64px
+	margin-bottom 32px
 	padding 0 16px
+	flex 1
 
 	@media (min-width 600px)
 		padding 0 32px

@@ -11,13 +11,15 @@
 
 <svelte:window bind:scrollY={y}/>
 
-{#if y > 64}
-	<div class="sticky">
+
+<div class="sticky">
+	{#if y > 64}
 		<button class="fab ripple" on:click="{goUp}" transition:scale="{{duration: 300}}">
 			<Icon icon="arrow-up"/> 
 		</button>
-	</div>
-{/if}
+	{/if}
+</div>
+
 
 <style lang="stylus">
 .sticky
@@ -25,6 +27,7 @@
 	display flex
 	justify-content right
 	margin-bottom -28px
+	min-height 56px
 	position sticky
 
 	@media(min-width 840px)

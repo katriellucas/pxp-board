@@ -1,13 +1,15 @@
 <script>
 	import Icon from './Icon.svelte'
 
+	export let color;
 	export let name;
+	export let image;
 </script>
 
 
 <div class="card">
-	<div class="card__head">
-		<img class="image" alt="logo" />
+	<div class="card__head" style="--color: {color}">
+		<img src="symbols/{image}" alt="logo " />
 	</div>
 	<div class="card__body">
 		<div class="title">{name}</div>
@@ -27,7 +29,22 @@
 	background var(--surface-2)
 	display flex
 	flex-direction column
-	padding 16px
+	position relative
+	overflow hidden
+
+	&:first-of-type
+		&::before
+			border-radius 16px 16px 4px 16px
+			content ''
+			right 8px
+			position absolute
+			top 8px
+			background url(../symbols/brazil.svg), #73af00
+			background-position center
+			background-repeat no-repeat
+			background-size 36px auto
+			height 32px
+			width 48px
 	
 	&__head
 		align-items center
@@ -40,31 +57,4 @@
 	&__body
 		color var(--on-surface)
 		font 400 12px/16px 'Roboto', sans-serif
-
-.price, .fee, .volume
-	display flex
-	justify-content space-between
-
-.button
-	align-items center
-	color var(--on-surface)
-	border-radius 50%
-	display inline-flex
-	fill var(--on-surface)
-	height 40px
-	justify-content center
-	width 40px
-
-.image
-	width 40px
-	height 40px
-	margin-right 16px
-
-.name
-	color var(--on-surface)
-	font 500 16px/20px 'Roboto', sans-serif
-
-.exchange
-	align-items center
-	display flex
 </style>

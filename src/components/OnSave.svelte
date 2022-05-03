@@ -11,7 +11,7 @@
 
 <style lang="stylus">
 .red
-	color var(--red)
+	color var(--negative)
 
 tr
 	height 40px
@@ -21,7 +21,7 @@ tr
 		border-bottom none
 
 td
-	color var(--green)
+	color var(--positive)
 	font 400 14px/20px 'Roboto', sans-serif
 	padding 0 16px
 	padding-bottom 16px

@@ -1,5 +1,5 @@
 <svelte:head>
-	<script async src="js/chart.js"></script>
+	<script src="/js/pxp-chart.js"></script>
 </svelte:head>
 
 <div class="wrapper">
@@ -11,8 +11,8 @@
 		locale="en"
 		bg-color="var(--surface-2)"
 		text-color="var(--on-surface)"
-		status-up-color="var(--green)"
-		status-down-color="var(--red)"
+		status-up-color="var(--positive)"
+		status-down-color="var(--negative)"
 		buttons-color="transparent"
 		chart-color="#0C7EF9"
 		chart-gradient-from="#0c7ef94d"

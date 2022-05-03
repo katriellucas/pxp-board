@@ -71,5 +71,5 @@
 {:then fee}
 	{fee}
 {:catch error}
-	<p style="color: var(--red)">{error}</p>
+	<p style="color: var(--negative)">{error}</p>
 {/await}

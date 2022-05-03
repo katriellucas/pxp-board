@@ -13,10 +13,10 @@
 .card-grid
 	display grid
 	gap 8px
-	grid-template-columns repeat(auto-fit, minmax(200px, 1fr))
-	margin-bottom 32px
-	width 100%
+	grid-template-columns 1fr
+
 
 	@media (min-width: 600px)
 		gap 16px
+		grid-template-columns 1fr 1fr 1fr
 </style>

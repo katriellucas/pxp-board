@@ -57,6 +57,7 @@
 <style lang="stylus">
 footer
 	background var(--surface-1)
+	border-top solid 1px var(--surface-3)
 	padding 32px 16px
 	width 100%
 
