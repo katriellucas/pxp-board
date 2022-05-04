@@ -57,7 +57,7 @@
 							<Icon icon="chart"/>
 						</a>
 						<a href="{refer[data.tickers[i].market.name]}" class="button ripple" target="_blank" rel="sponsored">
-							Sign up
+							Trade
 						</a>
 					</div>
 				</div>

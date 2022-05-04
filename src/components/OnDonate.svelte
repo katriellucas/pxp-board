@@ -21,7 +21,7 @@
 .title
 	color var(--on-surface)
 	font 500 16px/20px 'Roboto', sans-serif
-	margin-top 16px
+	margin 16px
 
 .card
 	border 1px solid var(--surface-3)

@@ -35,6 +35,6 @@
 	fill var(--on-surface-alt)
 	height 40px
 	justify-content center
-	margin-left 8px
+	margin-right 8px
 	width 40px
 </style>

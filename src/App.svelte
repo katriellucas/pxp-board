@@ -10,13 +10,13 @@
 	import Banner from './components/Banner.svelte'
 	import Chart from './components/Chart.svelte'
 	import Crypto from './components/Crypto.svelte'
-	import DonateWith from './components/DonateWith.svelte'
 	import Exchanges from './components/Exchanges.svelte'
 	import Fab from './components/Fab.svelte'
 	import Footer from './components/Footer.svelte'
 	import NavigationBar from './components/NavigationBar.svelte'
 	import NavigationRail from './components/NavigationRail.svelte'
 	import OnStake from './components/OnStake.svelte'
+	import OnDonate from './components/OnDonate.svelte'
 	import TokenSupply from './components/TokenSupply.svelte'
 	import TopAppBar from './components/TopAppBar.svelte'
 
@@ -58,6 +58,7 @@
 </script>
 
 <TopAppBar mode="{theme}" on:message={changeIcon}/>
+
 <NavigationRail/>
 
 <main>
@@ -101,10 +102,10 @@
 		</Route> 
 		<Route path="/donate">
 			<Donate>
-				<DonateWith name="Pix" image="pix.svg" color="#32BCAD"/>
-				<DonateWith name="PointPay Me" color="#F3BA2F"/>
-				<DonateWith name="Binance Pay" color="#F3BA2F"/>
-				<DonateWith name="Binance Pay" color="#F3BA2F"/>
+				<OnDonate name="Pix" image="pix.svg" color="#32BCAD"/>
+				<OnDonate name="PointPay Me" color="var(--primary)"/>
+				<OnDonate name="Binance Pay" color="#F3BA2F"/>
+				<OnDonate name="Brave Rewards" color="#F3BA2F"/>
 			</Donate>
 		</Route> 
 	</div>
