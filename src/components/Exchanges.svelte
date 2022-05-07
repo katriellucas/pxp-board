@@ -50,16 +50,13 @@
 				<div class="card__head">
 					<div class="exchange">
 						<img class="image" src="{data.tickers[i].market.logo}" alt="{data.tickers[i].market.name}" />
-						<h3 class="name">{data.tickers[i].market.name}</h3>
-					</div>
-					<div class="button-group">
-						<a href="{graph[data.tickers[i].market.name]}" class="icon-button ripple" target="_blank" rel="sponsored">
-							<Icon icon="chart"/>
-						</a>
-						<a href="{refer[data.tickers[i].market.name]}" class="button ripple" target="_blank" rel="sponsored">
-							Trade
+						<a href="{refer[data.tickers[i].market.name]}" target="_blank" class="button ripple">
+							<span class="label">{data.tickers[i].market.name}</span>
 						</a>
 					</div>
+					<a href="{graph[data.tickers[i].market.name]}" class="icon-button ripple" target="_blank" rel="sponsored">
+						<Icon icon="chart"/>
+					</a>
 				</div>
 				<div class="card__body">
 					<div class="price">
@@ -105,7 +102,7 @@
 	grid-template-columns repeat(auto-fit, minmax(300px, 1fr))
 	margin-bottom 32px
 
-	@media (min-width: 600px)
+	@media (min-width 600px)
 		gap 16px
 
 .card
@@ -132,10 +129,6 @@
 	display flex
 	justify-content space-between
 
-.button-group
-	align-items center
-	display flex
-
 .icon-button
 	align-items center
 	color var(--on-surface)
@@ -149,7 +142,6 @@
 
 .button
 	align-items center
-	background var(--surface-3)
 	border-radius 20px
 	color var(--on-surface)
 	display inline-flex
@@ -158,14 +150,20 @@
 	height 40px
 	justify-content center
 	padding 0 12px
+	transition color .3s
+
+	&:hover
+		color var(--primary)
+
+	&:focus
+		color var(--primary)
 
 .image
 	width 40px
 	height 40px
-	margin-right 16px
+	margin-right 8px
 
-.name
-	color var(--on-surface)
+.label
 	font 500 16px/20px 'Roboto', sans-serif
 
 .exchange

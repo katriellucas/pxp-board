@@ -1,6 +1,6 @@
 <script>
-	import IconSocial from './IconSocial.svelte'
-	import LinkButton from './LinkButton.svelte'
+	import IconLink from './IconLink.svelte'
+	import DevSocial from './DevSocial.svelte'
 	import Donor from './Donor.svelte'
 
 	let year = new Date().getFullYear()
@@ -21,26 +21,26 @@
 		<div class="reach-out">
 			<div class="title">Check me out</div>
 			<div class="row">
-				<LinkButton icon="portfolio" url="#" label="Portfolio"/>
-				<LinkButton icon="github" url="https://github.com/Go-Merk" label="Github"/>
-				<LinkButton icon="email" url="mailto:katriel.developer@gmail.com" label="Email"/>
+				<DevSocial icon="portfolio" url="#" label="Portfolio"/>
+				<DevSocial icon="github" url="https://github.com/Go-Merk" label="Github"/>
+				<DevSocial icon="email" url="mailto:katriel.developer@gmail.com" label="Email"/>
 			</div>
 		</div>
 		<div class="social">
 			<div class="title">PointPay Social</div>
 			<div class="icon-group">
-				<IconSocial url="https://pointpay.io" icon="website"/>
-				<IconSocial url="https://t.me/pointpay_eng" icon="telegram"/>
-				<IconSocial url="https://github.com" icon="linkedin"/>
-				<IconSocial url="https://twitter.com/PointPay1" icon="twitter"/>
-				<IconSocial url="https://facebook.com/PointPayLtd" icon="facebook"/>
-				<IconSocial url="https://pointpay.medium.com/" icon="medium"/>
-				<IconSocial url="https://reddit.com/user/PointPay_official" icon="reddit"/>
-				<IconSocial url="https://youtube.com/c/PointPay_official" icon="youtube"/>
-				<IconSocial url="https://instagram.com/pointpayofficial" icon="instagram"/>
-				<IconSocial url="https://discord.com/invite/pointpay" icon="discord"/>
-				<IconSocial url="https://coinmarketcap.com/currencies/pointpay/" icon="coinmarketcap"/>
-				<IconSocial url="https://coingecko.com/en/coins/pointpay" icon="coingecko"/>
+				<IconLink url="https://pointpay.io" icon="website"/>
+				<IconLink url="https://t.me/pointpay_eng" icon="telegram"/>
+				<IconLink url="https://github.com" icon="linkedin"/>
+				<IconLink url="https://twitter.com/PointPay1" icon="twitter"/>
+				<IconLink url="https://facebook.com/PointPayLtd" icon="facebook"/>
+				<IconLink url="https://pointpay.medium.com/" icon="medium"/>
+				<IconLink url="https://reddit.com/user/PointPay_official" icon="reddit"/>
+				<IconLink url="https://youtube.com/c/PointPay_official" icon="youtube"/>
+				<IconLink url="https://instagram.com/pointpayofficial" icon="instagram"/>
+				<IconLink url="https://discord.com/invite/pointpay" icon="discord"/>
+				<IconLink url="https://coinmarketcap.com/currencies/pointpay/" icon="coinmarketcap"/>
+				<IconLink url="https://coingecko.com/en/coins/pointpay" icon="coingecko"/>
 			</div>
 		</div>
 		<div class="donors">

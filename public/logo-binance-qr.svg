@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   viewBox="0 0 43 43"
+   version="1.1"
+   id="svg14"
+   sodipodi:docname="logo-binance-qr.svg"
+   inkscape:version="1.1.2 (b8e25be833, 2022-02-05)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview16"
+     pagecolor="#505050"
+     bordercolor="#ffffff"
+     borderopacity="1"
+     inkscape:pageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="1"
+     showgrid="false"
+     inkscape:zoom="3.1104651"
+     inkscape:cx="-6.9121495"
+     inkscape:cy="16.717757"
+     inkscape:window-width="1366"
+     inkscape:window-height="697"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg14" />
+  <defs
+     id="defs8">
+    <linearGradient
+       id="a"
+       x1="19.9"
+       y1="0"
+       x2="19.9"
+       y2="40"
+       gradientUnits="userSpaceOnUse">
+      <stop
+         stop-color="#5CC6F6"
+         id="stop2" />
+      <stop
+         offset="1"
+         stop-color="#007AFF"
+         id="stop4" />
+    </linearGradient>
+    <linearGradient
+       xlink:href="#a"
+       id="b"
+       gradientUnits="userSpaceOnUse"
+       x1="19.9"
+       y1="0"
+       x2="19.9"
+       y2="40"
+       gradientTransform="translate(1.5 1.5)" />
+  </defs>
+  <path
+     fill-rule="evenodd"
+     clip-rule="evenodd"
+     d="M21.4 1.5C5 1.5 1.5 5 1.5 21.5s3.5 20 20 20c16.3 0 19.9-3.5 19.9-20s-3.6-20-20-20z"
+     fill="url('#a')"
+     style="fill:#f3ba2f;stroke:#fff;stroke-width:3;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;fill-opacity:1"
+     id="path10" />
+  <path
+     d="m 17.618483,19.904423 3.884676,-3.883096 3.886256,3.886256 L 27.648498,17.64692 21.503159,11.5 15.35782,17.645339 Z"
+     id="path1177"
+     style="fill:#ffffff;stroke-width:1" />
+  <path
+     d="m 11.5,21.501579 2.259083,-2.260663 2.260664,2.260663 -2.260664,2.259085 z"
+     id="path1179"
+     style="fill:#ffffff;stroke-width:1" />
+  <path
+     d="m 17.618483,23.097156 3.884676,3.884676 3.886256,-3.886256 2.260664,2.257504 L 21.504739,31.5 15.35782,25.35782 Z"
+     id="path1181"
+     style="fill:#ffffff;stroke-width:1" />
+  <path
+     d="M 26.981832,21.501579 29.240916,19.240916 31.50158,21.5 29.240916,23.762243 Z"
+     id="path1183"
+     style="fill:#ffffff;stroke-width:1" />
+  <path
+     d="m 23.795418,21.5 -2.292259,-2.293839 -1.695102,1.695103 -0.195892,0.194312 -0.401265,0.401264 2.292259,2.29068 2.292259,-2.285941 z"
+     id="path1185"
+     style="fill:#ffffff;stroke-width:1" />
+</svg>

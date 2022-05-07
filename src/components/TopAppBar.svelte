@@ -16,7 +16,7 @@
 	</div>
 	<div class="actions">
 		<ThemeButton mode="{mode}" on:message/>
-		<SignupButton url="https://auth.pointpay.io/sign-up?ref=15542698942" label="PointPay Bank"/>
+		<SignupButton url="https://auth.pointpay.io/sign-up?ref=22297046471" label="PointPay Bank"/>
 	</div>
 </header>
 

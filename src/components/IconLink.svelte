@@ -5,12 +5,12 @@
 	export let url;
 </script>
 
-<a href="{url}" class="icon-button ripple" target="_blank">
+<a href="{url}" class="icon-link ripple" target="_blank">
 	<Icon icon="{icon}"/>
 </a>
 
 <style lang="stylus">
-.icon-button
+.icon-link
 	align-items center
 	color var(--on-surface-alt)
 	border-radius 50%
@@ -18,6 +18,5 @@
 	fill var(--on-surface-alt)
 	height 40px
 	justify-content center
-	margin-right 4px
 	width 40px
 </style>

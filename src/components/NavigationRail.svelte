@@ -88,7 +88,7 @@
 
 :global(.active)
 	.indicator
-		background rgba(#0C7EF9, .07)
+		background rgba(#0F8BFE, .07)
 		fill var(--primary)
 		width 56px
 	.label

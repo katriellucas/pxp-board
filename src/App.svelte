@@ -7,7 +7,9 @@
 	import Staking from './routes/Staking.svelte'
 	import Donate from './routes/Donate.svelte'
 
+	import Alert from './components/Alert.svelte'
 	import Banner from './components/Banner.svelte'
+	import BraveButton from './components/BraveButton.svelte'
 	import Chart from './components/Chart.svelte'
 	import Crypto from './components/Crypto.svelte'
 	import Exchanges from './components/Exchanges.svelte'
@@ -17,11 +19,16 @@
 	import NavigationRail from './components/NavigationRail.svelte'
 	import OnStake from './components/OnStake.svelte'
 	import OnDonate from './components/OnDonate.svelte'
+	import ClipboardButton from './components/ClipboardButton.svelte'
 	import TokenSupply from './components/TokenSupply.svelte'
+	import TooltipButton from './components/TooltipButton.svelte'
 	import TopAppBar from './components/TopAppBar.svelte'
 
-	let theme = localStorage.theme;
+
+	let alert;
+	let alert_msg;
 	let quest = Math.floor((Math.random() * 8));
+	let theme = localStorage.theme;
 
 	function changeTheme() {
 		document.body.className = ''
@@ -34,6 +41,14 @@
 		localStorage.setItem('theme', theme);
 	}
 
+	function showAlert(event) {
+    alert_msg = event.detail;
+		clearTimeout(alert)
+		alert = setTimeout(() => {
+			alert_msg = "";
+		}, 7500)
+  }
+
 	window.matchMedia('(prefers-color-scheme: dark)')
 		.addEventListener('change', event => {
     	theme = event.matches ? "dark" : "light";
@@ -43,7 +58,6 @@
 	onMount(() => {
 		if (theme) {
 			theme = localStorage.theme
-			console.log(theme,"ssssssss")
 		} else {
 			theme = (() => {
 				if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
@@ -102,10 +116,54 @@
 		</Route> 
 		<Route path="/donate">
 			<Donate>
-				<OnDonate name="Pix" image="pix.svg" color="#32BCAD"/>
-				<OnDonate name="PointPay Me" color="var(--primary)"/>
-				<OnDonate name="Binance Pay" color="#F3BA2F"/>
-				<OnDonate name="Brave Rewards" color="#F3BA2F"/>
+				<OnDonate
+					name="Pix"
+					description="Ei! Você é brasileiro? Eu também! Para apoiar o projeto basta usar o Pix para fazer uma doação."
+					image="pix.svg"
+					color="#32BCAD">
+					<ClipboardButton
+						label="Chave Pix"
+						value="katriel.crypto@gmail.com"
+						msg="Chave Pix copiada! Agora, dirija-se ao app do seu banco para fazer a doação."
+						on:alert={showAlert}/>
+					<TooltipButton icon="qrcode">
+						<img src="/qr/pix-qr.svg" alt="QR Code - Donate with Pix"/>
+					</TooltipButton>
+				</OnDonate>
+				<OnDonate
+					name="PointPay Me"
+					description="Contribute to the project using PointPay Me, conveniently send crypto by email."
+					image="pointpay-me.svg"
+					color="var(--primary)">
+					<ClipboardButton
+						label="Email"
+						value="katriel.crypto@gmail.com"
+						msg="Email copied! Now you can go to PointPay App/Website to make the donation."
+						on:alert={showAlert}/>
+				</OnDonate>
+				<OnDonate
+					name="Binance Pay"
+					description="Donate 70+ cryptocurrencies at ZERO fees using Binace Pay! Fast and easy!"
+					image="binance.svg"
+					color="#F3BA2F">
+					<ClipboardButton
+						label="Email"
+						value="katriel.crypto@gmail.com"
+						msg="Email copied! Now you can go to Binance App/Website to make the donation."
+						on:alert={showAlert}/>
+					<div>
+						<TooltipButton icon="qrcode">
+							<img src="/qr/binance-qr.svg" alt="QR Code - Donate with Binance Pay"/>
+						</TooltipButton>
+					</div>
+				</OnDonate>
+				<OnDonate
+					name="Brave Rewards"
+					image="brave.svg"
+					color="#FB542B"
+					description="PXP Board is a verified Brave Creator, tipping BAT is supported. Not using Brave? Give it a try!">
+					<BraveButton/>
+				</OnDonate>
 			</Donate>
 		</Route> 
 	</div>
@@ -114,6 +172,10 @@
 <Fab/>
 <Footer/>
 <NavigationBar/>
+
+{#if alert_msg}
+	<Alert msg="{alert_msg}" />
+{/if}
 
 
 <style lang="stylus">

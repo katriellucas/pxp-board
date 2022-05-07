@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "host": "vite --host",
     "build": "vite build",
     "preview": "vite preview",
     "sprite": "svg-sprite -s --symbol-dest icons --symbol-sprite ../public/sprite.svg src/assets/icons/*.svg"
@@ -16,6 +17,6 @@
     "svelte-preprocess": "^4.10.6",
     "svg-sprite": "^1.5.4",
     "tinro": "^0.6.12",
-    "vite": "^2.9.6"
+    "vite": "^2.9.8"
   }
 }
