@@ -28,6 +28,7 @@
 	justify-content right
 	margin-bottom -28px
 	min-height 56px
+	pointer-events none 
 	position sticky
 
 	@media(min-width 840px)
@@ -45,4 +46,5 @@
 	justify-content center
 	margin-right 16px
 	min-width 56px
+	pointer-events auto
 </style>
