@@ -143,7 +143,7 @@
 				</OnDonate>
 				<OnDonate
 					name="Binance Pay"
-					description="Donate 70+ cryptocurrencies at ZERO fees using Binace Pay! Fast and easy!"
+					description="Donate 70+ cryptocurrencies at ZERO fees using Binance Pay! Fast and easy!"
 					image="binance.svg"
 					color="#F3BA2F">
 					<ClipboardButton
