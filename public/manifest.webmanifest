@@ -1,5 +1,4 @@
 {
-  "background_color": "#0E1423",
   "display": "standalone",
   "icons": [
     {
@@ -14,6 +13,8 @@
     }
   ],
   "name": "PXP Board",
+  "background_color": "#0F8BFE",
+	"theme_color": "#0F8BFE",
   "short_name": "PXP Board",
   "start_url": "/",
 	"scope": "/"
