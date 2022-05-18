@@ -3,12 +3,10 @@
 	import Icon from './Icon.svelte'
 
 	export let mode;
-	console.log(mode, "on ThemeButton")
 
 	const dispatch = createEventDispatcher();
 
 	function modeDark(mode) {
-		console.log(mode, "sdfsdf")
 		dispatch('message', mode);
 	}
 

@@ -23,12 +23,21 @@
 	import TokenSupply from './components/TokenSupply.svelte'
 	import TooltipButton from './components/TooltipButton.svelte'
 	import TopAppBar from './components/TopAppBar.svelte'
-
+	import TotalVolume from './components/TotalVolume.svelte'
 
 	let alert;
 	let alert_msg;
 	let quest = Math.floor((Math.random() * 8));
 	let theme = localStorage.theme;
+	let volume = 0;
+
+	(async () => {
+		const response = await fetch('https://api.coingecko.com/api/v3/coins/pointpay/tickers?include_exchange_logo=true&depth=false')
+		const exchanges = await response.json()
+		for (const exchange of exchanges.tickers) {
+  		volume = volume + exchange.converted_volume.usd;
+		}
+	})()
 
 	function changeTheme() {
 		document.body.className = ''
@@ -71,7 +80,7 @@
 	});
 </script>
 
-<TopAppBar mode="{theme}" on:message={changeIcon}/>
+<TopAppBar mode="{theme}" on:message={changeIcon} volume="{volume}"/>
 
 <NavigationRail/>
 
@@ -79,6 +88,7 @@
 	<div class="live-area">
 		<Route path="/">
 			<section in:fade="{{delay: 100, duration: 250 }}" out:fade="{{ duration: 100 }}">
+				<TotalVolume mobile volume="{volume}"/>
 				<Chart/>
 				<TokenSupply/>
 				<Exchanges/>

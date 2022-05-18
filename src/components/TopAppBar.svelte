@@ -2,10 +2,10 @@
 
 	import SignupButton from './SignupButton.svelte'
 	import ThemeButton from './ThemeButton.svelte'
+	import TotalVolume from './TotalVolume.svelte'
 
 	export let mode;
-
-	console.log(mode, "on top app bar")
+	export let volume;
 
 </script>
 
@@ -14,6 +14,7 @@
 		<img class="image" src="logo.svg" />
 		<h1 class="title">Board</h1>
 	</div>
+	<TotalVolume volume="{volume}"/>
 	<div class="actions">
 		<ThemeButton mode="{mode}" on:message/>
 		<SignupButton url="https://auth.pointpay.io/sign-up?ref=22297046471" label="PointPay Bank"/>

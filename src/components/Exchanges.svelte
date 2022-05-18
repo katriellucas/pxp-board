@@ -1,27 +1,19 @@
 <script>
 	import { fade } from 'svelte/transition';
+	import { createEventDispatcher } from 'svelte';
 
 	import ExFee from './ExFee.svelte'
 	import Icon from './Icon.svelte'
+
+	const dispatch = createEventDispatcher();
+
+	let total_vol = 0;
 
 	const fetchImage = (async () => {
 		const response = await fetch('https://api.coingecko.com/api/v3/coins/pointpay/tickers?include_exchange_logo=true&depth=false')
     return await response.json()
 	})()
 
-	function myFunc(node, value) {
-		node.textContent = `$${value.toFixed(5)}`;
-	}
-
-	function exVolume(node, value) {
-		node.textContent = new Intl.NumberFormat('en-US', {
-			style: 'currency',
-			currency: 'USD',
-			minimumFractionDigits: 2,
-			maximumFractionDigits: 2,
-		}).format(value);
-	}
-	
 	const refer = {
 		Bitrue: "https://www.bitrue.com/act/partner/landing?cn=900000&inviteCode=ETQZEGL",
 		WhiteBIT: "https://whitebit.com/referral/1bd865b8-13cb-4395-a9fa-70332777b455",
@@ -37,6 +29,22 @@
 		Bittrex: "https://global.bittrex.com/Market/Index?MarketName=USDT-PXP",
 		"Uniswap (v3)": "https://info.uniswap.org/#/tokens/0x95aa5d2dbd3c16ee3fdea82d5c6ec3e38ce3314f"
 	}
+
+	function myFunc(node, value) {
+		node.textContent = `$${value.toFixed(5)}`;
+	}
+
+	function exVolume(node, value) {
+		total_vol = total_vol + value;
+		node.textContent = new Intl.NumberFormat('en-US', {
+			style: 'currency',
+			currency: 'USD',
+			minimumFractionDigits: 2,
+			maximumFractionDigits: 2,
+		}).format(value);
+		dispatch('message', {text: total_vol});
+	}
+
 </script>
 
 <h2 class="title">Exchanges</h2>
