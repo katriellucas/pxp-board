@@ -45,16 +45,6 @@
 	color var(--on-surface)
 	font 400 14px/18px 'Roboto', sans-serif
 
-.loader
-	background url(../loading.svg)
-	background-position center
-	background-repeat no-repeat
-	background-size 64px auto
-	display flex
-	justify-content center
-	width 100%
-	height 128px
-
 // Mods ---
 
 .mobile

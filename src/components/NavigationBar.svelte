@@ -1,28 +1,34 @@
 <script>
 	import {active} from 'tinro';
 	import Icon from './Icon.svelte'
+
+	function goUp() {
+		setTimeout(() => {
+			window.scrollTo({ top: 0, behavior: 'smooth' })
+		}, 250)
+	}
 </script>
 
 <div class="navigation-bar">
-	<a class="route route-ripple" href="/" use:active exact>
+	<a class="route route-ripple" href="/" use:active exact on:click={goUp}>
 		<span class="indicator">
 			<Icon icon="token"/>
 		</span>
 		<span class="label">Token</span>
 	</a>
-	<a class="route route-ripple" href="/savings" use:active exact>
+	<a class="route route-ripple" href="/savings" use:active exact on:click={goUp}>
 		<span class="indicator">
 			<Icon icon="savings"/>
 		</span>
 		<span class="label">Savings</span>
 	</a>
-	<a class="route route-ripple" href="/staking" use:active exact>
+	<a class="route route-ripple" href="/staking" use:active exact on:click={goUp}>
 		<span class="indicator">
 			<Icon icon="coin-stake"/>
 		</span>
 		<span class="label">Staking</span>
 	</a>
-	<a class="route route-ripple" href="/donate" use:active exact>
+	<a class="route route-ripple" href="/donate" use:active exact on:click={goUp}>
 		<span class="indicator">
 			<Icon icon="donate"/>
 		</span>

@@ -21,8 +21,8 @@
 		<div class="reach-out">
 			<div class="title">Check me out</div>
 			<div class="row">
-				<DevSocial icon="portfolio" url="#" label="Portfolio"/>
-				<DevSocial icon="github" url="https://github.com/Go-Merk" label="Github"/>
+				<DevSocial icon="portfolio" url="https://katriellucas.github.io" label="Portfolio"/>
+				<DevSocial icon="github" url="https://github.com/katriellucas" label="Github"/>
 				<DevSocial icon="email" url="mailto:katriel.developer@gmail.com" label="Email"/>
 			</div>
 		</div>

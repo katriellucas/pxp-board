@@ -75,10 +75,7 @@
 						24H Volume:
 						<span use:exVolume={data.tickers[i].converted_volume.usd}></span>
 					</div>
-					<div class="fee">
-						Withdrawal Fee:
-						<span class="fee"><ExFee exchange="{data.tickers[i].market.name}"/></span>
-					</div>
+					<ExFee exchange="{data.tickers[i].market.name}"/>
 				</div>
 			</div>
 		{/each}
