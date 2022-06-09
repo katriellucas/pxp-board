@@ -2,34 +2,22 @@
 	import { fade } from 'svelte/transition';
 	import { createEventDispatcher } from 'svelte';
 
-	import Solidbit from './beta/Solidbit.svelte'
-
-	import ExFee from './ExFee.svelte'
-	import Icon from './Icon.svelte'
-
-	const dispatch = createEventDispatcher();
+	import ExFee from '.../ExFee.svelte'
+	import Icon from '.../Icon.svelte'
 
 	let total_vol = 0;
 
 	const fetchImage = (async () => {
-		const response = await fetch('https://api.coingecko.com/api/v3/coins/pointpay/tickers?include_exchange_logo=true&depth=false')
+		const response = await fetch('https://b2t-api-cmc-solidbit.flexprotect.org/marketdata/cmc/v1/ticker')
     return await response.json()
 	})()
 
 	const refer = {
-		Bitrue: "https://www.bitrue.com/act/partner/landing?cn=900000&inviteCode=ETQZEGL",
-		WhiteBIT: "https://whitebit.com/referral/1bd865b8-13cb-4395-a9fa-70332777b455",
-		BitGlobal: "https://www.bitglobal.com/register;i=cwh4at",
-		Bittrex: "https://bittrex.com/discover/join?referralCode=MWC-FKX-2AP",
-		"Uniswap (v3)": "https://app.uniswap.org/#/swap?inputCurrency=ETH&outputCurrency=0x95aa5d2dbd3c16ee3fdea82d5c6ec3e38ce3314f&chain=mainnet"
+		CoinTiger: "https://www.cointiger.top/#/register?refCode=u9WJwL"
 	}
 
 	const graph = {
-		Bitrue: "https://bitrue.com/trade/pxp_usdt",
-		WhiteBIT: "https://whitebit.com/trade-pro/PXP-USDT?type=spot",
-		BitGlobal: "https://bitglobal.com/en-us/exchange/professional?q=PXP-USDT",
-		Bittrex: "https://global.bittrex.com/Market/Index?MarketName=USDT-PXP",
-		"Uniswap (v3)": "https://info.uniswap.org/#/tokens/0x95aa5d2dbd3c16ee3fdea82d5c6ec3e38ce3314f"
+		CoinTiger: "https://www.cointiger.com/en-us/#/trade_pro?coin=pxp_usdt",
 	}
 
 	function myFunc(node, value) {
@@ -44,12 +32,9 @@
 			minimumFractionDigits: 2,
 			maximumFractionDigits: 2,
 		}).format(value);
-		dispatch('message', {text: total_vol});
 	}
 
 </script>
-
-<h2 class="title">Exchanges</h2>
 
 {#await fetchImage}
 	<div class="loader"></div>
@@ -84,7 +69,6 @@
 				</div>
 			</div>
 		{/each}
-		<Solidbit/>
 	</div>
 {:catch error}
 	<div>{error}</div>

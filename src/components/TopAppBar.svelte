@@ -11,7 +11,7 @@
 
 <header class="top-app-bar">
 	<div class="top-app-bar__logo">
-		<img class="image" src="logo.svg" />
+		<img class="image" src="logo.svg" alt="PXP Board logo" />
 		<h1 class="title">Board</h1>
 	</div>
 	<TotalVolume volume="{volume}"/>
