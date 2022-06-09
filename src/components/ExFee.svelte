@@ -101,11 +101,15 @@
 		<span>{coin.fee_withdrawal}</span>
 	</div>
 {:catch error}
-	<p style="color: var(--negative)">{error}</p>
+	<div class="error">API isn't working or is in maintenance, go check the exchange for updates.</div>
 {/await}
 
 <style lang="stylus">
 .label
 	display flex
 	justify-content space-between
+
+.error
+	color var(--negative)
+	padding 8px 0
 </style>
