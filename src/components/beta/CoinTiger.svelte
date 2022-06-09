@@ -76,16 +76,6 @@
 	font 500 16px/20px 'Roboto', sans-serif
 	margin-left 8px
 
-.loader
-	background url(../loading.svg)
-	background-position center
-	background-repeat no-repeat
-	background-size 64px auto
-	display flex
-	justify-content center
-	width 100%
-	height 128px
-
 .card
 	border 1px solid var(--surface-3)
 	border-radius 20px
