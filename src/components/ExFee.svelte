@@ -61,6 +61,28 @@
 			})
 			break;
 		}
+		case "Solidbit": {
+			test = { 
+				min_withdrawal: `N/A`,
+				fee_withdrawal: `0 PXP`
+			}
+			break;
+		}
+		case "CoinTiger": {
+			test = wtx('https://fees.pxp.workers.dev/?api=https://api.cointiger.com/exchange/trading/api/v2/currencys').then(api => {
+				const coins = api.data['usdt-partition']
+				for (let coin of coins) {
+					if (coin.baseCurrency === 'pxp') {
+						const info = { 
+							min_withdrawal: `${parseFloat(coin.withdrawOneMin).toFixed(2)} PXP`,
+							fee_withdrawal: `${parseFloat(coin.withdrawFeeMin).toFixed(2)} PXP`
+						}
+						return info
+					}
+				}
+			})
+			break;
+		}
 		case "Uniswap (v3)": {
 			test = wtx('https://api.gasprice.io/v1/estimates?countervalue=usd').then(api => {
 				let ethereum = parseFloat(api.result.ethPrice)

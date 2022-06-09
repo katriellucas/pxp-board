@@ -1,31 +1,22 @@
 <script>
 	import { fade } from 'svelte/transition';
-	import { createEventDispatcher } from 'svelte';
 
-	import ExFee from '.../ExFee.svelte'
-	import Icon from '.../Icon.svelte'
+	import Icon from '../Icon.svelte'
+	import SignupButton from '../SignupButton.svelte'
+	import Spinner from '../Spinner.svelte'
+	import TooltipBeta from '../TooltipBeta.svelte'
 
-	let total_vol = 0;
-
-	const fetchImage = (async () => {
-		const response = await fetch('https://b2t-api-cmc-solidbit.flexprotect.org/marketdata/cmc/v1/ticker')
-    return await response.json()
+	const beta_market = (async () => {
+		const response = await fetch('https://www.cointiger.com/exchange/api/public/market/detail')
+		return await response.json()
 	})()
 
-	const refer = {
-		CoinTiger: "https://www.cointiger.top/#/register?refCode=u9WJwL"
-	}
-
-	const graph = {
-		CoinTiger: "https://www.cointiger.com/en-us/#/trade_pro?coin=pxp_usdt",
-	}
-
 	function myFunc(node, value) {
-		node.textContent = `$${value.toFixed(5)}`;
+		console.log(value)
+		node.textContent = `$${parseFloat(value).toFixed(5)}`;
 	}
 
 	function exVolume(node, value) {
-		total_vol = total_vol + value;
 		node.textContent = new Intl.NumberFormat('en-US', {
 			style: 'currency',
 			currency: 'USD',
@@ -36,51 +27,50 @@
 
 </script>
 
-{#await fetchImage}
-	<div class="loader"></div>
-{:then data}
-	<div class="card-grid">
-		{#each data.tickers as _, i}
-			<div class="card" transition:fade>
-				<div class="card__head">
-					<div class="exchange">
-						<img class="image" src="{data.tickers[i].market.logo}" alt="{data.tickers[i].market.name}" />
-						<span class="name">{data.tickers[i].market.name}</span>
-					</div>
-					<a href="{graph[data.tickers[i].market.name]}" class="icon-button ripple" target="_blank" rel="sponsored">
-						<Icon icon="chart"/>
-					</a>
-				</div>
-				<div class="card__body">
-					<div class="price">
-						PXP Price:
-						<span use:myFunc={data.tickers[i].converted_last.usd}></span>
-					</div>
-					<div class="volume">
-						24H Volume:
-						<span use:exVolume={data.tickers[i].converted_volume.usd}></span>
-					</div>
-					<ExFee exchange="{data.tickers[i].market.name}"/>
-				</div>
-				<div class="card__footer">
-					<a href="{refer[data.tickers[i].market.name]}" target="_blank" class="button ripple">
-						<span class="label">Buy PXP</span>
-					</a>
-				</div>
+	<div class="card" transition:fade>
+		<div class="card__head">
+			<div class="exchange">
+				<img class="image" src="images/beta/cointiger.png" alt="Solidbit" />
+				<span class="name">CoinTiger</span>
 			</div>
-		{/each}
+			<a href="https://www.cointiger.com/en-us/#/trade_pro?coin=pxp_usdt" class="icon-button ripple" target="_blank" rel="sponsored">
+				<Icon icon="chart"/>
+			</a>
+		</div>
+		<div class="card__body">
+			{#await beta_market}
+				<div class="label">
+					PXP Price:
+					<Spinner/>
+				</div>
+				<div class="label">
+					24H Volume:
+					<Spinner/>
+				</div>
+			{:then data}
+				<div class="label">
+					PXP Price:
+					<span use:myFunc={data.PXPUSDT.last}></span>
+				</div>
+				<div class="label">
+					24H Volume:
+					<span use:exVolume={data.PXPUSDT.quoteVolume}></span>
+				</div>
+			{:catch error}
+				<div class="error">API isn't working or is in maintenance, go check the exchange for updates.</div>
+			{/await}
+			<slot/>
+		</div>
+		<div class="card__footer">
+			<SignupButton 
+				url="https://www.cointiger.top/#/register?refCode=u9WJwL"
+				label="Buy PXP"/>
+			<TooltipBeta label="BETA" description="Information about this exchange is in BETA, expect changes and inaccuracies, always test with a small amount first. Volume from BETA exchanges aren't added to total daily volume."/>
+		</div>
 	</div>
-{:catch error}
-	<div>{error}</div>
-{/await}
 
 
 <style lang="stylus">
-.title
-	color var(--on-surface)
-	font 500 20px/24px 'Roboto', sans-serif
-	padding 32px 0 16px
-
 .name
 	color var(--on-surface)
 	font 500 16px/20px 'Roboto', sans-serif
@@ -95,15 +85,6 @@
 	justify-content center
 	width 100%
 	height 128px
-
-.card-grid
-	display grid
-	gap 8px
-	grid-template-columns repeat(auto-fit, minmax(300px, 1fr))
-	margin-bottom 32px
-
-	@media (min-width 600px)
-		gap 16px
 
 .card
 	border 1px solid var(--surface-3)
@@ -134,7 +115,7 @@
 		margin-top 16px
 		padding-top 24px
 
-.price, .volume
+.label
 	display flex
 	justify-content space-between
 
@@ -149,26 +130,18 @@
 	margin-right 4px
 	width 40px
 
-.button
-	align-items center
-	background var(--primary)
-	color var(--on-primary)
-	border-radius 20px
-	display inline-flex
-	fill currentcolor
-	height 40px
-	justify-content center
-	padding 0 16px
-
-.label
-	font 500 14px/20px 'Roboto', sans-serif
-
 .image
-	width 40px
+	border-radius 25%
 	height 40px
 	margin-right 8px
+	overflow hidden
+	width 40px
 
 .exchange
 	align-items center
 	display flex
+
+.error
+	color var(--negative)
+	padding 8px 0
 </style>

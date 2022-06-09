@@ -3,6 +3,7 @@
 	import { createEventDispatcher } from 'svelte';
 
 	import Solidbit from './beta/Solidbit.svelte'
+	import CoinTiger from './beta/CoinTiger.svelte'
 
 	import ExFee from './ExFee.svelte'
 	import Icon from './Icon.svelte'
@@ -84,7 +85,12 @@
 				</div>
 			</div>
 		{/each}
-		<Solidbit/>
+		<Solidbit>
+			<ExFee exchange="Solidbit"/>
+		</Solidbit>
+		<CoinTiger>
+			<ExFee exchange="CoinTiger"/>
+		</CoinTiger>
 	</div>
 {:catch error}
 	<div>{error}</div>

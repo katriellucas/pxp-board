@@ -3,9 +3,10 @@
 
 	import Icon from '../Icon.svelte'
 	import SignupButton from '../SignupButton.svelte'
+	import Spinner from '../Spinner.svelte'
 	import TooltipBeta from '../TooltipBeta.svelte'
 
-	const beta = (async () => {
+	const market = (async () => {
 		const response = await fetch('https://b2t-api-cmc-solidbit.flexprotect.org/marketdata/cmc/v1/ticker')
     return await response.json()
 	})()
@@ -26,20 +27,27 @@
 
 </script>
 
-{#await beta}
-	<div class="loader"></div>
-{:then data}
-	<div class="card" transition:fade>
-		<div class="card__head">
-			<div class="exchange">
-				<img class="image" src="images/beta/solidbit.png" alt="Solidbit" />
-				<span class="name">Solidbit</span>
-			</div>
-			<a href="https://my.solidbit.io/en/trading-board/ce" class="icon-button ripple" target="_blank" rel="sponsored">
-				<Icon icon="chart"/>
-			</a>
+<div class="card" transition:fade>
+	<div class="card__head">
+		<div class="exchange">
+			<img class="image" src="images/beta/solidbit.png" alt="Solidbit" />
+			<span class="name">Solidbit</span>
 		</div>
-		<div class="card__body">
+		<a href="https://solidbit.io/" class="icon-button ripple" target="_blank" rel="sponsored">
+			<Icon icon="chart"/>
+		</a>
+	</div>
+	<div class="card__body">
+		{#await market}
+			<div class="label">
+				PXP Price:
+				<Spinner/>
+			</div>
+			<div class="label">
+				24H Volume:
+				<Spinner/>
+			</div>
+		{:then data}
 			<div class="label">
 				PXP Price:
 				<span use:myFunc={data.PXP_USDT.last_price}></span>
@@ -48,25 +56,18 @@
 				24H Volume:
 				<span use:exVolume={data.PXP_USDT.quote_volume}></span>
 			</div>
-			<div class="label">
-				Min. Withdrawal:
-				<span>> 1 PXP</span>
-			</div>
-			<div class="label">
-				Withdrawal Fee:
-				<span>0 PXP</span>
-			</div>
-		</div>
-		<div class="card__footer">
-			<SignupButton 
-				url="https://my.solidbit.io/register?referral=8162bf0b099178918c9988319225721d"
-				label="Buy PXP"/>
-			<TooltipBeta label="BETA" description="Information about this exchange is in BETA, expect changes and inaccuracies, always test with a small amount first. Volume from BETA exchanges aren't added to total daily volume."/>
-		</div>
+		{:catch error}
+			<div class="error">API isn't working or is in maintenance, go check the exchange for updates.</div>
+		{/await}
+		<slot/>
 	</div>
-{:catch error}
-	<div>{error}</div>
-{/await}
+	<div class="card__footer">
+		<SignupButton 
+			url="https://my.solidbit.io/register?referral=8162bf0b099178918c9988319225721d"
+			label="Buy PXP"/>
+		<TooltipBeta label="BETA" description="Information about this exchange is in BETA, expect changes and inaccuracies, always test with a small amount first. Volume from BETA exchanges aren't added to total daily volume."/>
+	</div>
+</div>
 
 
 <style lang="stylus">
@@ -130,11 +131,17 @@
 	width 40px
 
 .image
-	width 40px
+	border-radius 25%
 	height 40px
 	margin-right 8px
+	overflow hidden
+	width 40px
 
 .exchange
 	align-items center
 	display flex
+
+.error
+	color var(--negative)
+	padding 8px 0
 </style>

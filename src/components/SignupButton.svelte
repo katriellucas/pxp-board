@@ -3,7 +3,7 @@
 	export let url
 </script>
 
-<a href="{url}" class="button ripple">
+<a href="{url}" class="button ripple" target="_blank">
 	<span class="label">{label}</span>
 </a>
 
