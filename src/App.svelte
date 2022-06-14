@@ -97,19 +97,27 @@
 		</Route>
 		<Route path="/savings">
 			<Savings>
-				<Crypto name="PointPay" ticker="PXP" color="#F7931A" value="up to 10.0%"/>
-				<Crypto name="Bitcoin" ticker="BTC" color="#F7931A" value="4.2%"/>
-				<Crypto name="Ethereum" ticker="ETH" color="#627EEA" value="2.6%"/>
-				<Crypto name="Tether" ticker="USDT" color="#26A17B" value="6.0%"/>
-				<Crypto name="USD Coin" ticker="USDC" color="#3E73C4" value="6.0%"/>
-				<Crypto name="Bitcoin Cash" ticker="BCH" color="#3E73C4" value="4.1%"/>
-				<Crypto name="ChainLink" ticker="LINK" color="#3E73C4" value="3.1%"/>
-				<Crypto name="XRP" ticker="XRP" color="#3E73C4" value="3.0%"/>
-				<Crypto name="Litecoin" ticker="LTC" color="#3E73C4" value="4.8%"/>
-				<Crypto name="Tron" ticker="TRX" color="#3E73C4" value="3.0%"/>
-				<Crypto name="Tether Gold" ticker="XAUT" color="#26A17B" value="3.0%"/>
-				<Crypto name="Dai" ticker="DAI" color="#D59B05" value="6.0%"/>
-				<Crypto name="Binance Coin" ticker="BNB" color="#D59B05" value="5.0%"/>
+				<Crypto name="PointPay" ticker="PXP" color="positive" value="up to 10.0%"/>
+				<Crypto name="Bitcoin" ticker="BTC" color="positive" value="1.2%"/>
+				<Crypto name="Ethereum" ticker="ETH" color="positive" value="1.0%"/>
+				<Crypto name="Tether" ticker="USDT" color="positive" value="1.1%"/>
+				<Crypto name="USD Coin" ticker="USDC" color="positive" value="1.1%"/>
+				<Crypto name="Bitcoin Cash" ticker="BCH" color="positive" value="1.0%"/>
+				<Crypto name="Litecoin" ticker="LTC" color="positive" value="1.0%"/>
+				<Crypto name="Ripple" ticker="XRP" color="positive" value="1.0%"/>
+				<Crypto name="ChainLink" ticker="LINK" color="positive" value="1.0%"/>
+				<Crypto name="Tron" ticker="TRX" color="positive" value="1.0%"/>
+				<Crypto name="Dai" ticker="DAI" color="positive" value="1.1%"/>
+				<Crypto name="Binance Coin" ticker="BNB" color="positive" value="1.0%"/>
+				<Crypto name="Tether Gold" ticker="XAUT" color="positive" value="0.3%"/>
+				<Crypto name="Tetha Network" ticker="TETHA" color="positive" value="0.3%"/>
+				<Crypto name="Uniswap" ticker="UNI" color="negative" value="0.0%"/>
+				<Crypto name="Stellar" ticker="XML" color="negative" value="0.0%"/>
+				<Crypto name="SushiSwap" ticker="SUSHI" color="positive" value="0.1%"/>
+				<Crypto name="Solana" ticker="SOL" color="positive" value="0.1%"/>
+				<Crypto name="Polygon" ticker="MATIC" color="positive" value="0.1%"/>
+				<Crypto name="NEAR Protocol" ticker="NEAR" color="positive" value="0.1%"/>
+				<Crypto name="Cosmos" ticker="ATOM" color="positive" value="0.1%"/>
 			</Savings>
 		</Route>
 		<Route path="/staking">

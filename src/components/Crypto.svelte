@@ -5,7 +5,7 @@
 	export let value;
 </script>
 
-<li class="item" style="--color: {color}">
+<li class="item" style="">
 	<div class="crypto">
 		<img class="logo" src="crypto_logos/{name}.svg" alt="{name} logo"/>
 		<div>
@@ -13,7 +13,7 @@
 			<div class="ticker">{ticker}</div>
 		</div>
 	</div>
-	<div class="value">{value}</div>
+	<div class="value {color}">{value}</div>
 </li>
 
 <style lang="stylus">
@@ -45,6 +45,11 @@
 	font 400 14px/20px 'Roboto', sans-serif
 
 .value
-	color var(--positive)
 	font 500 16px/20px 'Roboto', sans-serif
+
+.positive
+	color var(--positive)
+
+.negative
+	color var(--negative)
 </style>
