@@ -32,7 +32,7 @@
 				for (let coin of coins) {
 					if (coin.name === 'PXP') {
 						const info = { 
-							min_withdrawal: `${coin.minWithdraw} PXP`,
+							min_withdrawal: `${parseFloat(coin.minWithdraw).toFixed(2)} PXP`,
 							fee_withdrawal: `${parseFloat(coin.withdrawFee).toFixed(2)} PXP`,
 						}
 						return info
@@ -44,7 +44,7 @@
 		case "Bittrex": {
 			test = wtx('https://fees.pxp.workers.dev/?api=https://api.bittrex.com/v3/currencies/pxp').then(api => {
 				const info = { 
-					min_withdrawal: `N/A`,
+					min_withdrawal: `${(parseFloat(api.txFee)*3).toFixed(2)} PXP`,
 					fee_withdrawal: `${parseFloat(api.txFee).toFixed(2)} PXP`
 				}
 				return info
