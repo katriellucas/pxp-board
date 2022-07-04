@@ -35,6 +35,14 @@
 			name: "Follow PointPay on Reddit - Upvote the latest posts",
 			url: "https://www.reddit.com/user/PointPay_official"
 		},
+		{ 
+			name: "Review PointPay on Google Play Store - Comment and Rate 5 ⭐",
+			url: "https://play.google.com/store/apps/details?id=com.pointpay.bank"
+		},
+		{ 
+			name: "Review PointPay on Apple App Store - Comment and Rate 5 ⭐",
+			url: "https://apps.apple.com/us/app/id1512836089"
+		},
 	];
 </script>
 
