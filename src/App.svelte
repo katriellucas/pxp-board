@@ -111,8 +111,8 @@
 				<Crypto name="Binance Coin" ticker="BNB" color="positive" value="1.0%"/>
 				<Crypto name="Tether Gold" ticker="XAUT" color="positive" value="0.3%"/>
 				<Crypto name="Tetha Network" ticker="TETHA" color="positive" value="0.3%"/>
-				<Crypto name="Uniswap" ticker="UNI" color="negative" value="0.0%"/>
-				<Crypto name="Stellar" ticker="XML" color="negative" value="0.0%"/>
+				<Crypto name="Uniswap" ticker="UNI" color="positive" value="0.1%"/>
+				<Crypto name="Stellar" ticker="XML" color="positive" value="0.1%"/>
 				<Crypto name="SushiSwap" ticker="SUSHI" color="positive" value="0.1%"/>
 				<Crypto name="Solana" ticker="SOL" color="positive" value="0.1%"/>
 				<Crypto name="Polygon" ticker="MATIC" color="positive" value="0.1%"/>
