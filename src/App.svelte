@@ -118,6 +118,11 @@
 				<Crypto name="Polygon" ticker="MATIC" color="positive" value="0.1%"/>
 				<Crypto name="NEAR Protocol" ticker="NEAR" color="positive" value="0.1%"/>
 				<Crypto name="Cosmos" ticker="ATOM" color="positive" value="0.1%"/>
+				<Crypto name="Polkadot" ticker="DOT" color="positive" value="0.1%"/>
+				<Crypto name="PancakeSwap" ticker="CAKE" color="positive" value="0.1%"/>
+				<Crypto name="Ethereum Classic" ticker="ETC" color="positive" value="0.1%"/>
+				<Crypto name="Dash" ticker="DASH" color="positive" value="0.1%"/>
+				<Crypto name="Avalanche" ticker="AVAX" color="positive" value="0.1%"/>
 			</Savings>
 		</Route>
 		<Route path="/staking">
