@@ -56,6 +56,9 @@
 	<div class="loader"></div>
 {:then data}
 	<div class="card-grid">
+		<Solidbit>
+			<ExFee exchange="Solidbit"/>
+		</Solidbit>
 		{#each data.tickers as _, i}
 			<div class="card" transition:fade>
 				<div class="card__head">
@@ -85,9 +88,6 @@
 				</div>
 			</div>
 		{/each}
-		<Solidbit>
-			<ExFee exchange="Solidbit"/>
-		</Solidbit>
 		<CoinTiger>
 			<ExFee exchange="CoinTiger"/>
 		</CoinTiger>

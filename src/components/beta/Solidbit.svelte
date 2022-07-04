@@ -65,7 +65,7 @@
 		<SignupButton 
 			url="https://my.solidbit.io/register?referral=8162bf0b099178918c9988319225721d"
 			label="Buy PXP"/>
-		<TooltipBeta label="BETA" description="Information about this exchange is in BETA, expect changes and inaccuracies, always test with a small amount first. Volume from BETA exchanges aren't added to total daily volume."/>
+		<TooltipBeta label="RECOMMENDED" description="PointPay partner with low fees and fast transaction times."/>
 	</div>
 </div>
 

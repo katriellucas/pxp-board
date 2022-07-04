@@ -1,0 +1,21 @@
+{
+  "display": "standalone",
+  "icons": [
+    {
+      "src": "/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "name": "PXP Board",
+  "background_color": "#0F8BFE",
+	"theme_color": "#0F8BFE",
+  "short_name": "PXP Board",
+  "start_url": "/",
+	"scope": "/"
+}

@@ -8,4 +8,7 @@ export default defineConfig({
 			preprocess: sveltePreprocess()
 		})
 	],
+	build: {
+    outDir: 'bin'
+  }
 });

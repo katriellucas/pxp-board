@@ -27,7 +27,7 @@
 
 	let alert;
 	let alert_msg;
-	let quest = Math.floor((Math.random() * 8));
+	let quest = Math.floor((Math.random() * 10));
 	let theme = localStorage.theme;
 	let volume = 0;
 
