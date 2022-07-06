@@ -1,36 +1,48 @@
 <script>
 	import { fade } from 'svelte/transition';
-	import { createEventDispatcher } from 'svelte';
 
 	import Solidbit from './beta/Solidbit.svelte'
 	import CoinTiger from './beta/CoinTiger.svelte'
 
 	import ExFee from './ExFee.svelte'
 	import Icon from './Icon.svelte'
-
-	const dispatch = createEventDispatcher();
-
-	let total_vol = 0;
+	import TooltipBeta from './TooltipBeta.svelte'
 
 	const fetchImage = (async () => {
 		const response = await fetch('https://api.coingecko.com/api/v3/coins/pointpay/tickers?include_exchange_logo=true&depth=false')
     return await response.json()
 	})()
 
-	const refer = {
-		Bitrue: "https://www.bitrue.com/act/partner/landing?cn=900000&inviteCode=ETQZEGL",
-		WhiteBIT: "https://whitebit.com/referral/1bd865b8-13cb-4395-a9fa-70332777b455",
-		BitGlobal: "https://www.bitglobal.com/register;i=cwh4at",
-		Bittrex: "https://bittrex.com/discover/join?referralCode=MWC-FKX-2AP",
-		"Uniswap (v3)": "https://app.uniswap.org/#/swap?inputCurrency=ETH&outputCurrency=0x95aa5d2dbd3c16ee3fdea82d5c6ec3e38ce3314f&chain=mainnet"
-	}
+	const extra = {
+		Bitrue: {
+			refer: "https://www.bitrue.com/act/partner/landing?cn=900000&inviteCode=ETQZEGL",
+			graph: "https://bitrue.com/trade/pxp_usdt",
+			tooltip: {
+				label: "FAST",
+				description: "Best volume, chances are that your order will be executed faster."
+			}
+		},
+		WhiteBIT: {
+			refer: "https://whitebit.com/referral/1bd865b8-13cb-4395-a9fa-70332777b455",
+			graph: "https://whitebit.com/trade-pro/PXP-USDT?type=spot",
+			tooltip: {
+				label: "GREAT",
+				description: "Reasonable volume with low fees."
+			}
+		},
+		BitGlobal: {
+			refer: "https://www.bitglobal.com/register;i=cwh4at",
+			graph: "https://bitglobal.com/en-us/exchange/professional?q=PXP-USDT"
+		},
+		Bittrex: {
+			refer: "https://bittrex.com/discover/join?referralCode=MWC-FKX-2AP",
+			graph: "https://global.bittrex.com/Market/Index?MarketName=USDT-PXP"
+		},
+		"Uniswap (v3)": {
+			refer: "https://app.uniswap.org/#/swap?inputCurrency=ETH&outputCurrency=0x95aa5d2dbd3c16ee3fdea82d5c6ec3e38ce3314f&chain=mainnet}",
+			graph: "https://info.uniswap.org/#/tokens/0x95aa5d2dbd3c16ee3fdea82d5c6ec3e38ce3314f"
 
-	const graph = {
-		Bitrue: "https://bitrue.com/trade/pxp_usdt",
-		WhiteBIT: "https://whitebit.com/trade-pro/PXP-USDT?type=spot",
-		BitGlobal: "https://bitglobal.com/en-us/exchange/professional?q=PXP-USDT",
-		Bittrex: "https://global.bittrex.com/Market/Index?MarketName=USDT-PXP",
-		"Uniswap (v3)": "https://info.uniswap.org/#/tokens/0x95aa5d2dbd3c16ee3fdea82d5c6ec3e38ce3314f"
+		}
 	}
 
 	function myFunc(node, value) {
@@ -38,14 +50,12 @@
 	}
 
 	function exVolume(node, value) {
-		total_vol = total_vol + value;
 		node.textContent = new Intl.NumberFormat('en-US', {
 			style: 'currency',
 			currency: 'USD',
 			minimumFractionDigits: 2,
 			maximumFractionDigits: 2,
 		}).format(value);
-		dispatch('message', {text: total_vol});
 	}
 
 </script>
@@ -66,7 +76,7 @@
 						<img class="image" src="{data.tickers[i].market.logo}" alt="{data.tickers[i].market.name}" />
 						<span class="name">{data.tickers[i].market.name}</span>
 					</div>
-					<a href="{graph[data.tickers[i].market.name]}" class="icon-button ripple" target="_blank" rel="sponsored">
+					<a href="{extra[data.tickers[i].market.name].graph}" class="icon-button ripple" target="_blank" rel="sponsored">
 						<Icon icon="chart"/>
 					</a>
 				</div>
@@ -82,9 +92,15 @@
 					<ExFee exchange="{data.tickers[i].market.name}"/>
 				</div>
 				<div class="card__footer">
-					<a href="{refer[data.tickers[i].market.name]}" target="_blank" class="button ripple">
+					<a href="{extra[data.tickers[i].market.name].refer}" target="_blank" class="button ripple">
 						<span class="label">Buy PXP</span>
 					</a>
+					{#if extra[data.tickers[i].market.name].tooltip}
+						<TooltipBeta
+							label={extra[data.tickers[i].market.name].tooltip.label}
+							description={extra[data.tickers[i].market.name].tooltip.description}
+						/>
+					{/if}
 				</div>
 			</div>
 		{/each}

@@ -1,7 +1,7 @@
 <script>
+	import { daily_volume } from '../assets/js/store.js';
 	import Spinner from './Spinner.svelte'
 
-	export let volume;
 	export let mobile;
 
 	$: total_vol = new Intl.NumberFormat('en-US', {
@@ -9,14 +9,14 @@
 		currency: 'USD',
 		minimumFractionDigits: 2,
 		maximumFractionDigits: 2,
-	}).format(volume);
+	}).format($daily_volume);
 	
 
 </script>
 
 <div class="card" class:mobile>
 	<div class="title">24H Volume:</div>
-	{#if volume}
+	{#if $daily_volume}
 		<div class="volume">{total_vol}</div>
 	{:else}
 		<Spinner/>

@@ -5,7 +5,6 @@
 	import TotalVolume from './TotalVolume.svelte'
 
 	export let mode;
-	export let volume;
 
 </script>
 
@@ -14,7 +13,7 @@
 		<img class="image" src="logo.svg" alt="PXP Board logo" />
 		<h1 class="title">Board</h1>
 	</div>
-	<TotalVolume volume="{volume}"/>
+	<TotalVolume/>
 	<div class="actions">
 		<ThemeButton mode="{mode}" on:message/>
 		<SignupButton url="https://auth.pointpay.io/sign-up?ref=22297046471" label="PointPay Bank"/>

@@ -1,10 +1,13 @@
 <script>
 	import { fade } from 'svelte/transition';
+	import { createEventDispatcher } from 'svelte';
 
 	import Icon from '../Icon.svelte'
 	import SignupButton from '../SignupButton.svelte'
 	import Spinner from '../Spinner.svelte'
 	import TooltipBeta from '../TooltipBeta.svelte'
+
+	const dispatch = createEventDispatcher();
 
 	const market = (async () => {
 		const response = await fetch('https://b2t-api-cmc-solidbit.flexprotect.org/marketdata/cmc/v1/ticker')
@@ -12,7 +15,6 @@
 	})()
 
 	function myFunc(node, value) {
-		console.log(value)
 		node.textContent = `$${parseFloat(value).toFixed(5)}`;
 	}
 
@@ -23,6 +25,7 @@
 			minimumFractionDigits: 2,
 			maximumFractionDigits: 2,
 		}).format(parseFloat(value));
+		dispatch('message', {text: value});
 	}
 
 </script>
@@ -65,7 +68,7 @@
 		<SignupButton 
 			url="https://my.solidbit.io/register?referral=8162bf0b099178918c9988319225721d"
 			label="Buy PXP"/>
-		<TooltipBeta label="RECOMMENDED" description="PointPay partner with low fees and fast transaction times."/>
+		<TooltipBeta label="CHEAP" description="PointPay partner with very low fees and fast withdrawals. Order might take a while due to low trading volume."/>
 	</div>
 </div>
 

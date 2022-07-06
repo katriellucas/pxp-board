@@ -1,4 +1,5 @@
 <script>
+	import { daily_volume } from './assets/js/store.js';
 	import { onMount } from 'svelte';
 	import {fade} from 'svelte/transition';
 	import {Route} from 'tinro';
@@ -29,14 +30,21 @@
 	let alert_msg;
 	let quest = Math.floor((Math.random() * 10));
 	let theme = localStorage.theme;
-	let volume = 0;
 
 	(async () => {
-		const response = await fetch('https://api.coingecko.com/api/v3/coins/pointpay/tickers?include_exchange_logo=true&depth=false')
-		const exchanges = await response.json()
-		for (const exchange of exchanges.tickers) {
-  		volume = volume + exchange.converted_volume.usd;
+		$daily_volume = false
+		let gecko = await fetch('https://api.coingecko.com/api/v3/coins/pointpay/tickers?&depth=false')
+		let solidbit = await fetch('https://b2t-api-cmc-solidbit.flexprotect.org/marketdata/cmc/v1/ticker')
+
+		const ex1 = await gecko.json()
+		const ex2 = await solidbit.json()
+
+		for (const exchange of ex1.tickers) {
+  		$daily_volume += exchange.converted_volume.usd;
 		}
+
+		$daily_volume += parseFloat(ex2.PXP_USDT.quote_volume)
+		console.log($daily_volume)
 	})()
 
 	function changeTheme() {
@@ -80,7 +88,7 @@
 	});
 </script>
 
-<TopAppBar mode="{theme}" on:message={changeIcon} volume="{volume}"/>
+<TopAppBar mode="{theme}" on:message={changeIcon}/>
 
 <NavigationRail/>
 
@@ -88,7 +96,7 @@
 	<div class="live-area">
 		<Route path="/">
 			<section in:fade="{{delay: 100, duration: 250 }}" out:fade="{{ duration: 100 }}">
-				<TotalVolume mobile volume="{volume}"/>
+				<TotalVolume mobile/>
 				<Chart/>
 				<TokenSupply/>
 				<Exchanges/>

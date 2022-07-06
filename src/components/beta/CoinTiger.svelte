@@ -12,7 +12,6 @@
 	})()
 
 	function myFunc(node, value) {
-		console.log(value)
 		node.textContent = `$${parseFloat(value).toFixed(5)}`;
 	}
 
